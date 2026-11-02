@@ -77,6 +77,6 @@ src/markdown-cheatsheet.md      Markdown and Framework syntax reference (tempora
 Project_Proposal.pdf            Milestone 1 proposal
 ```
 
-## Use of AI
+## AI Disclosure
 
 We used Claude to help polish writing, find background sources, scaffold and check code, write python scripts and set up the GitHub Pages deployment.
