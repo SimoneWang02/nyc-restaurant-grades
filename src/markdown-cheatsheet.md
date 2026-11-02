@@ -33,7 +33,7 @@ A blank line starts a new paragraph. A single line break inside a paragraph is i
 
 ```md
 [link text](https://example.com)
-[another page on the site](./q1)
+[another page on the site](./questions/question-1)
 ![alt text](images/chart.png)
 ```
 
@@ -240,10 +240,10 @@ Affects only the page it is on.
 ### Links between pages
 
 ```md
-[Question 1](./q1)
+[Question 1](./questions/question-1)
 ```
 
-Leave off `.md`. The build checks these links and warns if a page does not exist.
+Leave off `.md`. Paths are relative to the current page, so from one question page to another it is just `./question-2`. The build checks these links and warns if a page does not exist.
 
 ---
 

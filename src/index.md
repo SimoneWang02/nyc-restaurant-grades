@@ -37,6 +37,8 @@ So an A on the door can come from a clean first inspection, or from a failed fir
 
 [DOHMH New York City Restaurant Inspection Results](https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j) from NYC Open Data. Health Department inspectors collect it during unannounced inspections. The file covers restaurants that are currently open and roughly their last three years of inspections. We work from a dated copy so our numbers do not shift while we write.
 
+The neighborhood map uses the 2010 Neighborhood Tabulation Areas from the NYC Department of City Planning, since those match the neighborhood codes in the inspection data.
+
 ---
 
 ## Team: Night's Watch

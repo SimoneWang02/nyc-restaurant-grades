@@ -47,7 +47,8 @@ npm run clean     # clear the Framework cache
 ## Repo layout
 
 ```
-observablehq.config.js          site title and sidebar order
+observablehq.config.js          site title, sidebar order and stylesheet
+src/custom-style.css            site-wide CSS (Framework defaults plus our tweaks)
 src/index.md                    home page
 src/questions/question-N.md     one page per question (1 to 8)
 src/markdown-cheatsheet.md      Markdown and Framework syntax reference (temporary)
