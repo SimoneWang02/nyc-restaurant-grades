@@ -59,4 +59,4 @@ Planned: `src/data/` for processed data and `src/components/` for D3 chart code.
 
 ## Use of AI
 
-We used Claude to help polish writing, find background sources, and scaffold and check code.
+We used Claude to help polish writing, find background sources, scaffold and check code, and set up the GitHub Pages deployment.
