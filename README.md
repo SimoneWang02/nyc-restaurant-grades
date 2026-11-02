@@ -2,6 +2,8 @@
 
 Every New York restaurant posts a letter grade by its door. This project looks at what an A actually tells a diner: how restaurants earn it, where and for whom it is harder to get, which violations are behind low scores, and what happens to restaurants that fail. Built with Observable Framework and D3 for NYU CS-GY 6313 Information Visualization (Fall 2026).
 
+**Live site:** TODO
+
 ## Team: Night's Watch
 
 - Simone Wang (sw7317)
@@ -22,28 +24,38 @@ Every New York restaurant posts a letter grade by its door. This project looks a
 ## Data
 
 - **DOHMH New York City Restaurant Inspection Results** (NYC Open Data, `43nn-pn8j`): https://data.cityofnewyork.us/d/43nn-pn8j
-  Collected by NYC Health Department inspectors during unannounced inspections. One row per violation per inspection; covers currently active restaurants and about three years of inspections. Updated daily, so we work from a dated snapshot (see `data/raw/SNAPSHOT.txt`).
+  Collected by NYC Health Department inspectors during unannounced inspections. One row per violation per inspection; covers currently active restaurants and about three years of inspections. Updated daily, so we work from a dated snapshot.
 - **2010 Neighborhood Tabulation Areas** (NYC Department of City Planning), used as the base map for Q2.
 
-The raw CSV is not stored in this repo. `scripts/download.py` fetches it.
+The raw CSV is large and is not stored in this repo. Download it to `data/raw/` (ignored by git):
 
-## Run it
+```
+https://data.cityofnewyork.us/api/views/43nn-pn8j/rows.csv?accessType=DOWNLOAD
+```
+
+## Run the site
+
+Requires Node.js 18 or later.
 
 ```bash
-pip install -r requirements.txt
-python scripts/download.py        # download and freeze the raw data
-python scripts/build_tables.py    # restaurant, inspection and violation tables
-python scripts/make_outputs.py    # small per-question files in src/data/
 npm install
-npm run dev                       # preview at http://localhost:3000
+npm run dev       # preview at http://127.0.0.1:3000, reloads on save
+npm run build     # static site in dist/
+npm run clean     # clear the Framework cache
 ```
 
 ## Repo layout
 
 ```
-scripts/          Python data pipeline
-src/              Framework pages (one per question)
-src/components/   D3 chart code
-src/data/         processed data used by the charts
-milestones/       course milestone material
+observablehq.config.js      site title and sidebar order
+src/index.md                home page
+src/questions/question-N.md one page per question (1 to 8)
+src/markdown-cheatsheet.md  Markdown and Framework syntax reference (temporary)
+Project_Proposal.pdf        Milestone 1 proposal
 ```
+
+Planned: `src/data/` for processed data and `src/components/` for D3 chart code.
+
+## Use of AI
+
+We used Claude to help polish writing, find background sources, and scaffold and check code.
