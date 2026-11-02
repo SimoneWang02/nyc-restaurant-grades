@@ -33,13 +33,20 @@ The raw CSV is large and is not stored in this repo. Download it to `data/raw/` 
 https://data.cityofnewyork.us/api/views/43nn-pn8j/rows.csv?accessType=DOWNLOAD
 ```
 
-## Project setup (done once)
+## Scripts
 
 ```bash
 python3 scripts/download.py   # use NYC API to download today's raw data and store it in data/raw
+python3 scripts/explore.py    # returns the shape of the CSV and the header columns
 ```
 
 ## Run the site
+
+Fetch today's data using NYC API and store it in data/raw (make sure to have at least one CSV before processing the data)
+
+```bash
+python3 scripts/download.py
+```
 
 Requires Node.js 18 or later.
 
