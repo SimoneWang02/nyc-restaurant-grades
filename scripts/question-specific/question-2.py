@@ -78,9 +78,22 @@ nta_counts = (
         .rename_axis(columns=None)
         .reset_index()
 )
-nta_counts["n_total"] = nta_counts[list(GROUP_COLUMNS.values())].sum(axis=1)
+nta_counts["total_count"] = nta_counts[list(GROUP_COLUMNS.values())].sum(axis=1)
 
 # Check: every restaurant on the map is counted exactly once
-assert nta_counts["n_total"].sum() == len(by_restaurant), "NTA totals don't add up"
-print(f"NTA table: {len(nta_counts)} rows, {nta_counts['n_total'].sum():,} restaurants")
-print(nta_counts.sort_values("n_total", ascending=False).head())
+assert nta_counts["total_count"].sum() == len(by_restaurant), "NTA totals don't add up"
+print(f"NTA table: {len(nta_counts)} rows, {nta_counts['total_count'].sum():,} restaurants")
+print(nta_counts.sort_values("total_count", ascending=False).head())
+
+# Borough table: add up the NTA rows inside each borough, so it matches the map exactly
+count_columns = list(GROUP_COLUMNS.values()) + ["total_count"]
+boro_counts = nta_counts.groupby("boro", as_index=False)[count_columns].sum()
+
+# Check: borough totals add up to the same number of restaurants as the NTA table
+assert boro_counts["total_count"].sum() == nta_counts["total_count"].sum(), "borough totals don't add up"
+print(boro_counts)
+
+NTA_OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+nta_counts.sort_values("nta").to_csv(NTA_OUT_FILE, index=False)
+boro_counts.to_csv(BORO_OUT_FILE, index=False)
+print(f"Wrote {NTA_OUT_FILE} ({len(nta_counts)} rows) and {BORO_OUT_FILE} ({len(boro_counts)} rows)")

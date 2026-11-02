@@ -1,0 +1,194 @@
+nta,boro,count_A,count_B,count_C,count_pending,total_count
+BK09,Brooklyn,103,6,0,17,126
+BK17,Brooklyn,119,5,1,11,136
+BK19,Brooklyn,45,1,2,16,64
+BK21,Brooklyn,48,3,2,18,71
+BK23,Brooklyn,19,1,1,9,30
+BK25,Brooklyn,92,13,0,17,122
+BK26,Brooklyn,27,0,1,5,33
+BK27,Brooklyn,48,6,0,10,64
+BK28,Brooklyn,179,19,3,24,225
+BK29,Brooklyn,99,8,0,12,119
+BK30,Brooklyn,63,10,2,12,87
+BK31,Brooklyn,240,13,6,53,312
+BK32,Brooklyn,163,9,2,26,200
+BK33,Brooklyn,159,4,2,24,189
+BK34,Brooklyn,236,31,6,39,312
+BK35,Brooklyn,107,8,3,21,139
+BK37,Brooklyn,398,20,10,39,467
+BK38,Brooklyn,304,16,4,41,365
+BK40,Brooklyn,53,3,1,3,60
+BK41,Brooklyn,38,1,4,7,50
+BK42,Brooklyn,151,11,4,25,191
+BK43,Brooklyn,58,6,2,9,75
+BK44,Brooklyn,49,9,4,8,70
+BK45,Brooklyn,66,5,4,12,87
+BK46,Brooklyn,16,2,2,2,22
+BK50,Brooklyn,73,4,3,6,86
+BK58,Brooklyn,69,10,0,14,93
+BK60,Brooklyn,130,10,6,21,167
+BK61,Brooklyn,197,17,3,32,249
+BK63,Brooklyn,50,6,1,4,61
+BK64,Brooklyn,104,8,1,19,132
+BK68,Brooklyn,102,9,3,23,137
+BK69,Brooklyn,104,7,0,18,129
+BK72,Brooklyn,5,3,0,4,12
+BK73,Brooklyn,396,21,8,59,484
+BK75,Brooklyn,136,7,5,22,170
+BK76,Brooklyn,208,18,4,34,264
+BK77,Brooklyn,226,15,11,41,293
+BK78,Brooklyn,144,6,2,32,184
+BK79,Brooklyn,31,3,1,4,39
+BK81,Brooklyn,71,3,4,9,87
+BK82,Brooklyn,106,9,0,12,127
+BK83,Brooklyn,61,2,2,13,78
+BK85,Brooklyn,20,4,0,0,24
+BK88,Brooklyn,68,12,2,20,102
+BK90,Brooklyn,156,15,4,31,206
+BK91,Brooklyn,45,6,3,12,66
+BK93,Brooklyn,13,1,0,0,14
+BK95,Brooklyn,64,0,1,19,84
+BK96,Brooklyn,57,4,1,7,69
+BK99,Brooklyn,17,0,0,6,23
+BX01,Bronx,27,2,0,4,33
+BX03,Bronx,38,3,2,9,52
+BX05,Bronx,73,5,1,13,92
+BX06,Bronx,105,7,2,9,123
+BX07,Bronx,46,2,5,4,57
+BX08,Bronx,36,7,2,8,53
+BX09,Bronx,30,4,0,1,35
+BX10,Bronx,57,4,0,8,69
+BX13,Bronx,64,6,0,6,76
+BX14,Bronx,44,7,0,8,59
+BX17,Bronx,42,3,1,4,50
+BX22,Bronx,37,4,0,4,45
+BX26,Bronx,25,2,0,7,34
+BX27,Bronx,56,2,3,9,70
+BX28,Bronx,29,7,0,6,42
+BX29,Bronx,88,9,1,6,104
+BX30,Bronx,20,4,1,6,31
+BX31,Bronx,28,2,2,1,33
+BX33,Bronx,30,4,1,7,42
+BX34,Bronx,77,1,3,14,95
+BX35,Bronx,34,2,4,3,43
+BX36,Bronx,42,3,2,8,55
+BX37,Bronx,68,3,3,13,87
+BX39,Bronx,86,12,5,20,123
+BX40,Bronx,43,6,1,6,56
+BX41,Bronx,55,7,2,3,67
+BX43,Bronx,58,4,2,11,75
+BX44,Bronx,60,12,1,6,79
+BX46,Bronx,42,5,1,3,51
+BX49,Bronx,50,2,1,5,58
+BX52,Bronx,79,7,1,10,97
+BX55,Bronx,47,2,0,3,52
+BX59,Bronx,58,4,0,8,70
+BX62,Bronx,55,6,1,7,69
+BX63,Bronx,126,10,2,9,147
+BX75,Bronx,18,1,0,1,20
+BX99,Bronx,17,0,0,0,17
+MN01,Manhattan,89,9,4,19,121
+MN03,Manhattan,57,4,6,16,83
+MN04,Manhattan,76,9,3,26,114
+MN06,Manhattan,35,4,1,5,45
+MN09,Manhattan,132,17,4,17,170
+MN11,Manhattan,75,11,3,15,104
+MN12,Manhattan,305,20,5,48,378
+MN13,Manhattan,763,51,8,95,917
+MN14,Manhattan,166,6,3,20,195
+MN15,Manhattan,398,33,12,97,540
+MN17,Manhattan,1579,93,25,218,1915
+MN19,Manhattan,440,28,9,55,532
+MN20,Manhattan,263,19,5,42,329
+MN21,Manhattan,186,10,5,27,228
+MN22,Manhattan,467,41,16,86,610
+MN23,Manhattan,698,45,11,110,864
+MN24,Manhattan,583,38,10,80,711
+MN25,Manhattan,437,13,4,56,510
+MN27,Manhattan,439,44,6,90,579
+MN28,Manhattan,122,7,2,28,159
+MN31,Manhattan,233,16,6,33,288
+MN32,Manhattan,181,14,4,24,223
+MN33,Manhattan,99,13,4,19,135
+MN34,Manhattan,126,7,3,17,153
+MN35,Manhattan,90,12,3,32,137
+MN36,Manhattan,132,17,3,20,172
+MN40,Manhattan,259,18,6,30,313
+MN50,Manhattan,9,2,0,0,11
+MN99,Manhattan,11,0,0,3,14
+QN01,Queens,21,2,0,4,27
+QN02,Queens,19,3,0,2,24
+QN03,Queens,14,1,0,7,22
+QN05,Queens,28,3,0,3,34
+QN06,Queens,40,1,1,3,45
+QN07,Queens,21,0,0,7,28
+QN08,Queens,49,5,3,3,60
+QN10,Queens,46,2,1,5,54
+QN12,Queens,38,1,0,3,42
+QN15,Queens,30,3,0,8,41
+QN17,Queens,166,15,5,31,217
+QN18,Queens,57,4,2,3,66
+QN19,Queens,50,2,2,5,59
+QN20,Queens,204,29,4,19,256
+QN21,Queens,40,3,1,10,54
+QN22,Queens,330,54,28,99,511
+QN23,Queens,39,2,3,5,49
+QN25,Queens,50,10,2,7,69
+QN26,Queens,125,24,1,18,168
+QN27,Queens,26,4,1,4,35
+QN28,Queens,236,38,8,42,324
+QN29,Queens,194,34,5,35,268
+QN30,Queens,56,7,2,11,76
+QN31,Queens,356,29,9,67,461
+QN33,Queens,15,2,1,2,20
+QN34,Queens,55,5,1,7,68
+QN35,Queens,46,9,3,6,64
+QN37,Queens,34,3,1,5,43
+QN38,Queens,36,3,3,3,45
+QN41,Queens,40,2,2,12,56
+QN42,Queens,37,4,1,5,47
+QN43,Queens,29,2,2,8,41
+QN44,Queens,39,4,2,8,53
+QN45,Queens,52,2,3,10,67
+QN46,Queens,132,14,2,21,169
+QN47,Queens,40,0,1,2,43
+QN48,Queens,32,2,1,5,40
+QN49,Queens,56,0,1,2,59
+QN50,Queens,46,8,3,14,71
+QN51,Queens,127,23,8,33,191
+QN52,Queens,28,7,2,7,44
+QN53,Queens,81,10,4,7,102
+QN54,Queens,93,13,8,19,133
+QN55,Queens,129,18,5,21,173
+QN56,Queens,43,3,0,4,50
+QN57,Queens,48,3,1,6,58
+QN60,Queens,36,4,1,3,44
+QN61,Queens,151,12,5,31,199
+QN62,Queens,17,4,3,6,30
+QN63,Queens,103,11,7,20,141
+QN66,Queens,31,2,3,4,40
+QN68,Queens,74,9,2,8,93
+QN70,Queens,319,37,7,71,434
+QN71,Queens,66,4,0,7,77
+QN72,Queens,127,13,1,16,157
+QN76,Queens,39,7,2,1,49
+QN98,Queens,55,0,0,0,55
+QN99,Queens,8,1,1,3,13
+SI01,Staten Island,33,1,0,4,38
+SI05,Staten Island,60,4,1,16,81
+SI07,Staten Island,64,11,0,9,84
+SI08,Staten Island,8,0,0,1,9
+SI11,Staten Island,68,5,1,10,84
+SI12,Staten Island,30,3,3,10,46
+SI14,Staten Island,20,4,0,4,28
+SI22,Staten Island,59,7,0,13,79
+SI24,Staten Island,68,2,3,14,87
+SI25,Staten Island,11,3,0,1,15
+SI28,Staten Island,37,5,1,5,48
+SI32,Staten Island,17,3,0,2,22
+SI35,Staten Island,41,1,1,7,50
+SI36,Staten Island,41,3,0,3,47
+SI37,Staten Island,49,8,1,13,71
+SI45,Staten Island,76,4,1,15,96
+SI48,Staten Island,5,1,0,0,6
+SI54,Staten Island,73,6,0,8,87
