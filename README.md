@@ -2,7 +2,7 @@
 
 Every New York restaurant posts a letter grade by its door. This project looks at what an A actually tells a diner: how restaurants earn it, where and for whom it is harder to get, which violations are behind low scores, and what happens to restaurants that fail. Built with Observable Framework and D3 for NYU CS-GY 6313 Information Visualization (Fall 2026).
 
-**Live site:** TODO
+**Live site:** https://simonewang02.github.io/nyc-restaurant-grades/
 
 ## Team: Night's Watch
 
