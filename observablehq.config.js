@@ -10,10 +10,16 @@ export default {
 		{ name: "4. Chain restaurants", path: "/questions/question-4" },
 		{ name: "5. Violations", path: "/questions/question-5" },
 		{ name: "6. Pests", path: "/questions/question-6" },
-		{ name: "7. Recovering from a missed A", path: "/questions/question-7" },
+		{
+			name: "7. Recovering from a missed A",
+			path: "/questions/question-7",
+		},
 		{ name: "8. Closures and reopening", path: "/questions/question-8" },
 		{ name: "Markdown cheatsheet", path: "/markdown-cheatsheet" },
 	],
 
 	root: "src",
+
+	// Site-wide CSS (Framework defaults plus our tweaks)
+	style: "custom-style.css",
 };

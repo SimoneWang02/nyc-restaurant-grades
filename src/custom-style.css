@@ -1,0 +1,11 @@
+/* Framework's default look; our rules below override it. */
+@import url("observablehq:default.css");
+@import url("observablehq:theme-air.css");
+
+h1 {
+	margin-bottom: 0.5rem;
+}
+
+h2 {
+	margin-bottom: 1rem;
+}
