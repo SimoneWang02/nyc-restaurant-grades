@@ -2,10 +2,17 @@
 @import url("observablehq:default.css");
 @import url("observablehq:theme-air.css");
 
+/* Shared colors, used by headings and charts: var(--color-accent) */
+:root {
+	--color-accent: #00688F;
+}
+
 h1 {
 	margin-bottom: 0.5rem;
+	color: var(--color-accent);
 }
 
 h2 {
 	margin-bottom: 1rem;
+	color: var(--color-accent);
 }

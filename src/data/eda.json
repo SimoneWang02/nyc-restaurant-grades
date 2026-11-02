@@ -1,0 +1,955 @@
+{
+ "snapshot": "inspections_2026-11-01.csv",
+ "raw": {
+  "rows": 294707,
+  "columns": 27,
+  "restaurants": 31422,
+  "placeholder_rows": 3977,
+  "placeholder_restaurants": 3977,
+  "head": [
+   {
+    "CAMIS": "50136989",
+    "DBA": "HOT SPOT GRILL & JERK",
+    "BORO": "Bronx",
+    "BUILDING": "4850",
+    "STREET": "WHITE PLAINS ROAD",
+    "ZIPCODE": "10470",
+    "PHONE": "3473266244",
+    "CUISINE DESCRIPTION": "Caribbean",
+    "INSPECTION DATE": "07/27/2026",
+    "ACTION": "Violations were cited in the following area(s).",
+    "VIOLATION CODE": "04A",
+    "VIOLATION DESCRIPTION": "Food Protection Certificate (FPC) not held by manager or supervisor of food operations.",
+    "CRITICAL FLAG": "Critical",
+    "SCORE": "52",
+    "GRADE": null,
+    "GRADE DATE": null,
+    "RECORD DATE": "10/30/2026",
+    "INSPECTION TYPE": "Cycle Inspection / Initial Inspection",
+    "Latitude": "40.906572204567",
+    "Longitude": "-73.848812125642",
+    "Community Board": "212",
+    "Council District": "11",
+    "Census Tract": "044200",
+    "BIN": "2071934",
+    "BBL": "2051160025",
+    "NTA": "BX62",
+    "Location": "POINT (-73.848812125642 40.906572204567)"
+   },
+   {
+    "CAMIS": "41396810",
+    "DBA": "PEACEFOOD",
+    "BORO": "Manhattan",
+    "BUILDING": "460",
+    "STREET": "AMSTERDAM AVENUE",
+    "ZIPCODE": "10024",
+    "PHONE": "2123622266",
+    "CUISINE DESCRIPTION": "Vegan",
+    "INSPECTION DATE": "10/12/2023",
+    "ACTION": "Violations were cited in the following area(s).",
+    "VIOLATION CODE": "06D",
+    "VIOLATION DESCRIPTION": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+    "CRITICAL FLAG": "Critical",
+    "SCORE": "59",
+    "GRADE": null,
+    "GRADE DATE": null,
+    "RECORD DATE": "10/30/2026",
+    "INSPECTION TYPE": "Cycle Inspection / Initial Inspection",
+    "Latitude": "40.78523396425",
+    "Longitude": "-73.976809556989",
+    "Community Board": "107",
+    "Council District": "06",
+    "Census Tract": "017100",
+    "BIN": "1032759",
+    "BBL": "1012300029",
+    "NTA": "MN12",
+    "Location": "POINT (-73.976809556989 40.78523396425)"
+   },
+   {
+    "CAMIS": "50008241",
+    "DBA": "HEALTHY BITE",
+    "BORO": "Manhattan",
+    "BUILDING": "3961",
+    "STREET": "207 STREET",
+    "ZIPCODE": null,
+    "PHONE": "9143643159",
+    "CUISINE DESCRIPTION": "American",
+    "INSPECTION DATE": "10/09/2026",
+    "ACTION": "Violations were cited in the following area(s).",
+    "VIOLATION CODE": "04L",
+    "VIOLATION DESCRIPTION": "Evidence of mice or live mice in establishment's food or non-food areas.",
+    "CRITICAL FLAG": "Critical",
+    "SCORE": "31",
+    "GRADE": null,
+    "GRADE DATE": null,
+    "RECORD DATE": "10/30/2026",
+    "INSPECTION TYPE": "Cycle Inspection / Initial Inspection",
+    "Latitude": "0",
+    "Longitude": "0",
+    "Community Board": null,
+    "Council District": null,
+    "Census Tract": null,
+    "BIN": null,
+    "BBL": "1",
+    "NTA": null,
+    "Location": null
+   },
+   {
+    "CAMIS": "50058916",
+    "DBA": "LA ESQUINA",
+    "BORO": "Manhattan",
+    "BUILDING": "200",
+    "STREET": "WEST   55 STREET",
+    "ZIPCODE": "10019",
+    "PHONE": "6466137100",
+    "CUISINE DESCRIPTION": "Mexican",
+    "INSPECTION DATE": "06/13/2024",
+    "ACTION": "Violations were cited in the following area(s).",
+    "VIOLATION CODE": "09B",
+    "VIOLATION DESCRIPTION": "Thawing procedure improper.",
+    "CRITICAL FLAG": "Not Critical",
+    "SCORE": "23",
+    "GRADE": null,
+    "GRADE DATE": null,
+    "RECORD DATE": "10/30/2026",
+    "INSPECTION TYPE": "Cycle Inspection / Initial Inspection",
+    "Latitude": "40.764284048462",
+    "Longitude": "-73.981170483475",
+    "Community Board": "105",
+    "Council District": "06",
+    "Census Tract": "013700",
+    "BIN": "1024856",
+    "BBL": "1010260036",
+    "NTA": "MN17",
+    "Location": "POINT (-73.981170483475 40.764284048462)"
+   },
+   {
+    "CAMIS": "50036043",
+    "DBA": "THE MALT HOUSE",
+    "BORO": "Manhattan",
+    "BUILDING": "11",
+    "STREET": "MAIDEN LN",
+    "ZIPCODE": "10038",
+    "PHONE": "6466827577",
+    "CUISINE DESCRIPTION": "American",
+    "INSPECTION DATE": "02/09/2026",
+    "ACTION": "Violations were cited in the following area(s).",
+    "VIOLATION CODE": "09E",
+    "VIOLATION DESCRIPTION": "Wash hands sign not posted near or above hand washing sink.",
+    "CRITICAL FLAG": "Not Critical",
+    "SCORE": "12",
+    "GRADE": "A",
+    "GRADE DATE": "02/09/2026",
+    "RECORD DATE": "10/30/2026",
+    "INSPECTION TYPE": "Cycle Inspection / Initial Inspection",
+    "Latitude": "40.709560100401",
+    "Longitude": "-74.00948635272",
+    "Community Board": "101",
+    "Council District": "01",
+    "Census Tract": "001502",
+    "BIN": "1001098",
+    "BBL": "1000650010",
+    "NTA": "MN25",
+    "Location": "POINT (-74.00948635272 40.709560100401)"
+   }
+  ]
+ },
+ "tables": {
+  "restaurants": {
+   "rows": 27445,
+   "head": [
+    {
+     "camis": "50136989",
+     "dba": "HOT SPOT GRILL & JERK",
+     "boro": "Bronx",
+     "building": "4850",
+     "street": "WHITE PLAINS ROAD",
+     "zipcode": "10470",
+     "cuisine_description": "Caribbean",
+     "nta": "BX62",
+     "latitude": "40.906572204567",
+     "longitude": "-73.848812125642"
+    },
+    {
+     "camis": "41396810",
+     "dba": "PEACEFOOD",
+     "boro": "Manhattan",
+     "building": "460",
+     "street": "AMSTERDAM AVENUE",
+     "zipcode": "10024",
+     "cuisine_description": "Vegan",
+     "nta": "MN12",
+     "latitude": "40.78523396425",
+     "longitude": "-73.976809556989"
+    },
+    {
+     "camis": "50008241",
+     "dba": "HEALTHY BITE",
+     "boro": "Manhattan",
+     "building": "3961",
+     "street": "207 STREET",
+     "zipcode": null,
+     "cuisine_description": "American",
+     "nta": null,
+     "latitude": null,
+     "longitude": null
+    },
+    {
+     "camis": "50058916",
+     "dba": "LA ESQUINA",
+     "boro": "Manhattan",
+     "building": "200",
+     "street": "WEST   55 STREET",
+     "zipcode": "10019",
+     "cuisine_description": "Mexican",
+     "nta": "MN17",
+     "latitude": "40.764284048462",
+     "longitude": "-73.981170483475"
+    },
+    {
+     "camis": "50036043",
+     "dba": "THE MALT HOUSE",
+     "boro": "Manhattan",
+     "building": "11",
+     "street": "MAIDEN LN",
+     "zipcode": "10038",
+     "cuisine_description": "American",
+     "nta": "MN25",
+     "latitude": "40.709560100401",
+     "longitude": "-74.00948635272"
+    }
+   ],
+   "missing": [
+    {
+     "column": "camis",
+     "missing": 0,
+     "share": 0.0
+    },
+    {
+     "column": "dba",
+     "missing": 0,
+     "share": 0.0
+    },
+    {
+     "column": "boro",
+     "missing": 25,
+     "share": 0.0009109127345600292
+    },
+    {
+     "column": "building",
+     "missing": 162,
+     "share": 0.005902714519948989
+    },
+    {
+     "column": "street",
+     "missing": 1,
+     "share": 3.643650938240116e-05
+    },
+    {
+     "column": "zipcode",
+     "missing": 361,
+     "share": 0.013153579887046822
+    },
+    {
+     "column": "cuisine_description",
+     "missing": 2,
+     "share": 7.287301876480233e-05
+    },
+    {
+     "column": "nta",
+     "missing": 601,
+     "share": 0.0218983421388231
+    },
+    {
+     "column": "latitude",
+     "missing": 601,
+     "share": 0.0218983421388231
+    },
+    {
+     "column": "longitude",
+     "missing": 601,
+     "share": 0.0218983421388231
+    }
+   ]
+  },
+  "inspections": {
+   "rows": 92767,
+   "head": [
+    {
+     "camis": "50136989",
+     "inspection_date": "2026-07-27",
+     "inspection_type": "Cycle Inspection / Initial Inspection",
+     "score": "52",
+     "grade": null,
+     "grade_date": null,
+     "action": "Violations were cited in the following area(s)."
+    },
+    {
+     "camis": "41396810",
+     "inspection_date": "2023-10-12",
+     "inspection_type": "Cycle Inspection / Initial Inspection",
+     "score": "59",
+     "grade": null,
+     "grade_date": null,
+     "action": "Violations were cited in the following area(s)."
+    },
+    {
+     "camis": "50008241",
+     "inspection_date": "2026-10-09",
+     "inspection_type": "Cycle Inspection / Initial Inspection",
+     "score": "31",
+     "grade": null,
+     "grade_date": null,
+     "action": "Violations were cited in the following area(s)."
+    },
+    {
+     "camis": "50058916",
+     "inspection_date": "2024-06-13",
+     "inspection_type": "Cycle Inspection / Initial Inspection",
+     "score": "23",
+     "grade": null,
+     "grade_date": null,
+     "action": "Violations were cited in the following area(s)."
+    },
+    {
+     "camis": "50036043",
+     "inspection_date": "2026-02-09",
+     "inspection_type": "Cycle Inspection / Initial Inspection",
+     "score": "12",
+     "grade": "A",
+     "grade_date": "2026-02-09",
+     "action": "Violations were cited in the following area(s)."
+    }
+   ],
+   "missing": [
+    {
+     "column": "camis",
+     "missing": 0,
+     "share": 0.0
+    },
+    {
+     "column": "inspection_date",
+     "missing": 0,
+     "share": 0.0
+    },
+    {
+     "column": "inspection_type",
+     "missing": 0,
+     "share": 0.0
+    },
+    {
+     "column": "score",
+     "missing": 10341,
+     "share": 0.11147282977783048
+    },
+    {
+     "column": "grade",
+     "missing": 37848,
+     "share": 0.4079899102051376
+    },
+    {
+     "column": "grade_date",
+     "missing": 40042,
+     "share": 0.4316405618377225
+    },
+    {
+     "column": "action",
+     "missing": 0,
+     "share": 0.0
+    }
+   ]
+  },
+  "violations": {
+   "rows": 287655,
+   "head": [
+    {
+     "camis": "50136989",
+     "inspection_date": "2026-07-27",
+     "inspection_type": "Cycle Inspection / Initial Inspection",
+     "violation_code": "04A",
+     "violation_description": "Food Protection Certificate (FPC) not held by manager or supervisor of food operations.",
+     "critical_flag": "Critical"
+    },
+    {
+     "camis": "41396810",
+     "inspection_date": "2023-10-12",
+     "inspection_type": "Cycle Inspection / Initial Inspection",
+     "violation_code": "06D",
+     "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+     "critical_flag": "Critical"
+    },
+    {
+     "camis": "50008241",
+     "inspection_date": "2026-10-09",
+     "inspection_type": "Cycle Inspection / Initial Inspection",
+     "violation_code": "04L",
+     "violation_description": "Evidence of mice or live mice in establishment's food or non-food areas.",
+     "critical_flag": "Critical"
+    },
+    {
+     "camis": "50058916",
+     "inspection_date": "2024-06-13",
+     "inspection_type": "Cycle Inspection / Initial Inspection",
+     "violation_code": "09B",
+     "violation_description": "Thawing procedure improper.",
+     "critical_flag": "Not Critical"
+    },
+    {
+     "camis": "50036043",
+     "inspection_date": "2026-02-09",
+     "inspection_type": "Cycle Inspection / Initial Inspection",
+     "violation_code": "09E",
+     "violation_description": "Wash hands sign not posted near or above hand washing sink.",
+     "critical_flag": "Not Critical"
+    }
+   ],
+   "missing": [
+    {
+     "column": "camis",
+     "missing": 0,
+     "share": 0.0
+    },
+    {
+     "column": "inspection_date",
+     "missing": 0,
+     "share": 0.0
+    },
+    {
+     "column": "inspection_type",
+     "missing": 0,
+     "share": 0.0
+    },
+    {
+     "column": "violation_code",
+     "missing": 0,
+     "share": 0.0
+    },
+    {
+     "column": "violation_description",
+     "missing": 0,
+     "share": 0.0
+    },
+    {
+     "column": "critical_flag",
+     "missing": 0,
+     "share": 0.0
+    }
+   ]
+  }
+ },
+ "example": {
+  "camis": "40364179",
+  "raw": [
+   {
+    "INSPECTION DATE": "04/08/2026",
+    "INSPECTION TYPE": "Cycle Inspection / Initial Inspection",
+    "VIOLATION CODE": "10B",
+    "SCORE": "19",
+    "GRADE": null,
+    "ACTION": "Violations were cited in the following area(s)."
+   },
+   {
+    "INSPECTION DATE": "04/08/2026",
+    "INSPECTION TYPE": "Cycle Inspection / Initial Inspection",
+    "VIOLATION CODE": "08A",
+    "SCORE": "19",
+    "GRADE": null,
+    "ACTION": "Violations were cited in the following area(s)."
+   },
+   {
+    "INSPECTION DATE": "04/08/2026",
+    "INSPECTION TYPE": "Cycle Inspection / Initial Inspection",
+    "VIOLATION CODE": "10F",
+    "SCORE": "19",
+    "GRADE": null,
+    "ACTION": "Violations were cited in the following area(s)."
+   },
+   {
+    "INSPECTION DATE": "04/08/2026",
+    "INSPECTION TYPE": "Cycle Inspection / Initial Inspection",
+    "VIOLATION CODE": "04K",
+    "SCORE": "19",
+    "GRADE": null,
+    "ACTION": "Violations were cited in the following area(s)."
+   },
+   {
+    "INSPECTION DATE": "07/10/2024",
+    "INSPECTION TYPE": "Cycle Inspection / Initial Inspection",
+    "VIOLATION CODE": "10G",
+    "SCORE": "12",
+    "GRADE": "A",
+    "ACTION": "Violations were cited in the following area(s)."
+   },
+   {
+    "INSPECTION DATE": "07/10/2024",
+    "INSPECTION TYPE": "Cycle Inspection / Initial Inspection",
+    "VIOLATION CODE": "06C",
+    "SCORE": "12",
+    "GRADE": "A",
+    "ACTION": "Violations were cited in the following area(s)."
+   },
+   {
+    "INSPECTION DATE": "07/10/2024",
+    "INSPECTION TYPE": "Cycle Inspection / Initial Inspection",
+    "VIOLATION CODE": "10B",
+    "SCORE": "12",
+    "GRADE": "A",
+    "ACTION": "Violations were cited in the following area(s)."
+   }
+  ],
+  "inspections": [
+   {
+    "camis": "40364179",
+    "inspection_date": "2026-04-08",
+    "inspection_type": "Cycle Inspection / Initial Inspection",
+    "score": "19",
+    "grade": null,
+    "grade_date": null,
+    "action": "Violations were cited in the following area(s)."
+   },
+   {
+    "camis": "40364179",
+    "inspection_date": "2024-07-10",
+    "inspection_type": "Cycle Inspection / Initial Inspection",
+    "score": "12",
+    "grade": "A",
+    "grade_date": "2024-07-10",
+    "action": "Violations were cited in the following area(s)."
+   }
+  ],
+  "violations": [
+   {
+    "camis": "40364179",
+    "inspection_date": "2026-04-08",
+    "inspection_type": "Cycle Inspection / Initial Inspection",
+    "violation_code": "10B",
+    "critical_flag": "Not Critical"
+   },
+   {
+    "camis": "40364179",
+    "inspection_date": "2024-07-10",
+    "inspection_type": "Cycle Inspection / Initial Inspection",
+    "violation_code": "10G",
+    "critical_flag": "Not Critical"
+   },
+   {
+    "camis": "40364179",
+    "inspection_date": "2026-04-08",
+    "inspection_type": "Cycle Inspection / Initial Inspection",
+    "violation_code": "08A",
+    "critical_flag": "Not Critical"
+   },
+   {
+    "camis": "40364179",
+    "inspection_date": "2026-04-08",
+    "inspection_type": "Cycle Inspection / Initial Inspection",
+    "violation_code": "10F",
+    "critical_flag": "Not Critical"
+   },
+   {
+    "camis": "40364179",
+    "inspection_date": "2024-07-10",
+    "inspection_type": "Cycle Inspection / Initial Inspection",
+    "violation_code": "06C",
+    "critical_flag": "Critical"
+   },
+   {
+    "camis": "40364179",
+    "inspection_date": "2026-04-08",
+    "inspection_type": "Cycle Inspection / Initial Inspection",
+    "violation_code": "04K",
+    "critical_flag": "Critical"
+   },
+   {
+    "camis": "40364179",
+    "inspection_date": "2024-07-10",
+    "inspection_type": "Cycle Inspection / Initial Inspection",
+    "violation_code": "10B",
+    "critical_flag": "Not Critical"
+   }
+  ]
+ },
+ "counts": {
+  "inspection_type": [
+   {
+    "value": "Cycle Inspection / Initial Inspection",
+    "n": 46720,
+    "share": 0.5036273674905947
+   },
+   {
+    "value": "Cycle Inspection / Re-inspection",
+    "n": 17155,
+    "share": 0.18492567400045276
+   },
+   {
+    "value": "Pre-permit (Operational) / Initial Inspection",
+    "n": 10225,
+    "share": 0.11022238511539664
+   },
+   {
+    "value": "Administrative Miscellaneous / Initial Inspection",
+    "n": 7285,
+    "share": 0.0785300807399183
+   },
+   {
+    "value": "Pre-permit (Operational) / Re-inspection",
+    "n": 3063,
+    "share": 0.03301820690547285
+   },
+   {
+    "value": "Administrative Miscellaneous / Re-inspection",
+    "n": 1312,
+    "share": 0.014142960319941358
+   },
+   {
+    "value": "Inter-Agency Task Force / Initial Inspection",
+    "n": 1275,
+    "share": 0.013744111591406427
+   },
+   {
+    "value": "Cycle Inspection / Reopening Inspection",
+    "n": 1269,
+    "share": 0.013679433419211573
+   },
+   {
+    "value": "Pre-permit (Non-operational) / Initial Inspection",
+    "n": 993,
+    "share": 0.010704237498248299
+   },
+   {
+    "value": "Smoke-Free Air Act / Initial Inspection",
+    "n": 513,
+    "share": 0.005529983722659997
+   },
+   {
+    "value": "Cycle Inspection / Compliance Inspection",
+    "n": 467,
+    "share": 0.005034117735832786
+   },
+   {
+    "value": "Pre-permit (Operational) / Reopening Inspection",
+    "n": 466,
+    "share": 0.005023338040466977
+   },
+   {
+    "value": "Pre-permit (Operational) / Compliance Inspection",
+    "n": 452,
+    "share": 0.004872422305345651
+   },
+   {
+    "value": "Trans Fat / Initial Inspection",
+    "n": 431,
+    "share": 0.004646048702663662
+   },
+   {
+    "value": "Calorie Posting / Initial Inspection",
+    "n": 332,
+    "share": 0.0035788588614485755
+   },
+   {
+    "value": "Pre-permit (Non-operational) / Re-inspection",
+    "n": 220,
+    "share": 0.002371532980477972
+   },
+   {
+    "value": "Administrative Miscellaneous / Compliance Inspection",
+    "n": 124,
+    "share": 0.0013366822253603114
+   },
+   {
+    "value": "Sodium Warning / Initial Inspection",
+    "n": 68,
+    "share": 0.0007330192848750094
+   },
+   {
+    "value": "Smoke-Free Air Act / Re-inspection",
+    "n": 67,
+    "share": 0.0007222395895092005
+   },
+   {
+    "value": "Trans Fat / Re-inspection",
+    "n": 65,
+    "share": 0.0007006801987775826
+   },
+   {
+    "value": "Calorie Posting / Re-inspection",
+    "n": 57,
+    "share": 0.0006144426358511109
+   },
+   {
+    "value": "Administrative Miscellaneous / Reopening Inspection",
+    "n": 55,
+    "share": 0.000592883245119493
+   },
+   {
+    "value": "Pre-permit (Operational) / Second Compliance Inspection",
+    "n": 47,
+    "share": 0.0005066456821930213
+   },
+   {
+    "value": "Pre-permit (Non-operational) / Compliance Inspection",
+    "n": 31,
+    "share": 0.00033417055634007785
+   },
+   {
+    "value": "Cycle Inspection / Second Compliance Inspection",
+    "n": 27,
+    "share": 0.00029105177487684196
+   },
+   {
+    "value": "Administrative Miscellaneous / Second Compliance Inspection",
+    "n": 12,
+    "share": 0.00012935634438970755
+   },
+   {
+    "value": "Pre-permit (Non-operational) / Second Compliance Inspection",
+    "n": 7,
+    "share": 7.545786756066273e-05
+   },
+   {
+    "value": "Calorie Posting / Compliance Inspection",
+    "n": 6,
+    "share": 6.467817219485377e-05
+   },
+   {
+    "value": "Sodium Warning / Re-inspection",
+    "n": 6,
+    "share": 6.467817219485377e-05
+   },
+   {
+    "value": "Smoke-Free Air Act / Compliance Inspection",
+    "n": 5,
+    "share": 5.3898476829044814e-05
+   },
+   {
+    "value": "Accelerated Inspection Program / Initial Inspection",
+    "n": 4,
+    "share": 4.311878146323585e-05
+   },
+   {
+    "value": "Accelerated Inspection Program / Second Compliance Inspection",
+    "n": 2,
+    "share": 2.1559390731617923e-05
+   },
+   {
+    "value": "Accelerated Inspection Program / Reopening Inspection",
+    "n": 2,
+    "share": 2.1559390731617923e-05
+   },
+   {
+    "value": "Trans Fat / Second Compliance Inspection",
+    "n": 2,
+    "share": 2.1559390731617923e-05
+   },
+   {
+    "value": "Trans Fat / Compliance Inspection",
+    "n": 1,
+    "share": 1.0779695365808962e-05
+   },
+   {
+    "value": "Inter-Agency Task Force / Re-inspection",
+    "n": 1,
+    "share": 1.0779695365808962e-05
+   }
+  ],
+  "grade": [
+   {
+    "value": "A",
+    "n": 44464,
+    "share": 0.4793083747453297
+   },
+   {
+    "value": "(blank)",
+    "n": 37848,
+    "share": 0.4079899102051376
+   },
+   {
+    "value": "B",
+    "n": 4255,
+    "share": 0.045867603781517136
+   },
+   {
+    "value": "C",
+    "n": 2202,
+    "share": 0.023736889195511333
+   },
+   {
+    "value": "N",
+    "n": 2200,
+    "share": 0.023715329804779715
+   },
+   {
+    "value": "Z",
+    "n": 1271,
+    "share": 0.013700992809943191
+   },
+   {
+    "value": "P",
+    "n": 527,
+    "share": 0.005680899457781323
+   }
+  ],
+  "action": [
+   {
+    "value": "Violations were cited in the following area(s).",
+    "n": 86615,
+    "share": 0.9336833141095433
+   },
+   {
+    "value": "No violations were recorded at the time of this inspection.",
+    "n": 2928,
+    "share": 0.03156294803108864
+   },
+   {
+    "value": "Establishment Closed by DOHMH. Violations were cited in the following area(s) and those requiring immediate action were addressed.",
+    "n": 1592,
+    "share": 0.017161275022367868
+   },
+   {
+    "value": "Establishment re-opened by DOHMH.",
+    "n": 1285,
+    "share": 0.013851908545064516
+   },
+   {
+    "value": "Establishment re-closed by DOHMH.",
+    "n": 347,
+    "share": 0.00374055429193571
+   }
+  ],
+  "boro": [
+   {
+    "value": "Manhattan",
+    "n": 10783,
+    "share": 0.39289488067043177
+   },
+   {
+    "value": "Brooklyn",
+    "n": 7026,
+    "share": 0.2560029149207506
+   },
+   {
+    "value": "Queens",
+    "n": 6212,
+    "share": 0.22634359628347606
+   },
+   {
+    "value": "Bronx",
+    "n": 2407,
+    "share": 0.08770267808343961
+   },
+   {
+    "value": "Staten Island",
+    "n": 992,
+    "share": 0.03614501730734196
+   },
+   {
+    "value": "(blank)",
+    "n": 25,
+    "share": 0.0009109127345600292
+   }
+  ],
+  "critical_flag": [
+   {
+    "value": "Critical",
+    "n": 154075,
+    "share": 0.5356242721315465
+   },
+   {
+    "value": "Not Critical",
+    "n": 131773,
+    "share": 0.45809389720324695
+   },
+   {
+    "value": "Not Applicable",
+    "n": 1807,
+    "share": 0.006281830665206585
+   }
+  ]
+ },
+ "dates": {
+  "min": "2007-08-10",
+  "max": "2026-10-29",
+  "per_year": [
+   {
+    "year": "2007",
+    "inspections": 12
+   },
+   {
+    "year": "2008",
+    "inspections": 6
+   },
+   {
+    "year": "2009",
+    "inspections": 1
+   },
+   {
+    "year": "2010",
+    "inspections": 4
+   },
+   {
+    "year": "2011",
+    "inspections": 2
+   },
+   {
+    "year": "2012",
+    "inspections": 5
+   },
+   {
+    "year": "2013",
+    "inspections": 1
+   },
+   {
+    "year": "2014",
+    "inspections": 5
+   },
+   {
+    "year": "2015",
+    "inspections": 9
+   },
+   {
+    "year": "2016",
+    "inspections": 83
+   },
+   {
+    "year": "2017",
+    "inspections": 161
+   },
+   {
+    "year": "2018",
+    "inspections": 218
+   },
+   {
+    "year": "2019",
+    "inspections": 229
+   },
+   {
+    "year": "2020",
+    "inspections": 50
+   },
+   {
+    "year": "2021",
+    "inspections": 67
+   },
+   {
+    "year": "2022",
+    "inspections": 2197
+   },
+   {
+    "year": "2023",
+    "inspections": 12670
+   },
+   {
+    "year": "2024",
+    "inspections": 24326
+   },
+   {
+    "year": "2025",
+    "inspections": 27043
+   },
+   {
+    "year": "2026",
+    "inspections": 25678
+   }
+  ]
+ }
+}

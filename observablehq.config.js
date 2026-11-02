@@ -4,6 +4,7 @@ export default {
 
 	// Pages in the sidebar, in order. Add one entry per page as you create it
 	pages: [
+		{ name: "Dataset EDA", path: "/dataset-eda" },
 		{ name: "1. Earning an A", path: "/questions/question-1" },
 		{ name: "2. A grades by neighborhood", path: "/questions/question-2" },
 		{ name: "3. Scores by cuisine", path: "/questions/question-3" },

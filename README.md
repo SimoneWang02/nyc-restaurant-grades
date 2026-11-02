@@ -38,6 +38,15 @@ https://data.cityofnewyork.us/api/views/43nn-pn8j/rows.csv?accessType=DOWNLOAD
 ```bash
 python3 scripts/download.py   # use NYC API to download today's raw data and store it in data/raw
 python3 scripts/explore.py    # returns the shape of the CSV and the header columns
+python3 scripts/clean.py      # drops never-inspected restaurants, fixes types, splits into 3 tables in data/interim
+```
+
+`clean.py` writes three tables to `data/interim/` (ignored by git, rebuilt from the raw CSV):
+
+```
+restaurants.csv   one row per restaurant (CAMIS)
+inspections.csv   one row per inspection (CAMIS + date + type)
+violations.csv    one row per cited violation
 ```
 
 ## Run the site
@@ -70,4 +79,4 @@ Project_Proposal.pdf            Milestone 1 proposal
 
 ## Use of AI
 
-We used Claude to help polish writing, find background sources, scaffold and check code, and set up the GitHub Pages deployment.
+We used Claude to help polish writing, find background sources, scaffold and check code, write python scripts and set up the GitHub Pages deployment.
