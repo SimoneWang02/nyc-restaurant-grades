@@ -79,4 +79,6 @@ Project_Proposal.pdf            Milestone 1 proposal
 
 ## AI Disclosure
 
+### Simone Wang
+
 We used Claude to help polish writing, find background sources, scaffold and check code, write python scripts and set up the GitHub Pages deployment.
