@@ -33,6 +33,12 @@ The raw CSV is large and is not stored in this repo. Download it to `data/raw/` 
 https://data.cityofnewyork.us/api/views/43nn-pn8j/rows.csv?accessType=DOWNLOAD
 ```
 
+## Project setup (done once)
+
+```bash
+python3 scripts/download.py   # use NYC API to download today's raw data and store it in data/raw
+```
+
 ## Run the site
 
 Requires Node.js 18 or later.
@@ -54,8 +60,6 @@ src/questions/question-N.md     one page per question (1 to 8)
 src/markdown-cheatsheet.md      Markdown and Framework syntax reference (temporary)
 Project_Proposal.pdf            Milestone 1 proposal
 ```
-
-Planned: `src/data/` for processed data and `src/components/` for D3 chart code.
 
 ## Use of AI
 
