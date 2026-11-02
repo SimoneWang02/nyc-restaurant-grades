@@ -47,11 +47,11 @@ npm run clean     # clear the Framework cache
 ## Repo layout
 
 ```
-observablehq.config.js      site title and sidebar order
-src/index.md                home page
-src/questions/question-N.md one page per question (1 to 8)
-src/markdown-cheatsheet.md  Markdown and Framework syntax reference (temporary)
-Project_Proposal.pdf        Milestone 1 proposal
+observablehq.config.js          site title and sidebar order
+src/index.md                    home page
+src/questions/question-N.md     one page per question (1 to 8)
+src/markdown-cheatsheet.md      Markdown and Framework syntax reference (temporary)
+Project_Proposal.pdf            Milestone 1 proposal
 ```
 
 Planned: `src/data/` for processed data and `src/components/` for D3 chart code.
