@@ -16,9 +16,11 @@ Every violation adds points, and a score of 0 to 13 earns an A. This page shows 
 const scores = FileAttachment("/data/q1-scores.csv").csv({typed: true});
 ```
 
+## Inspections by Score
+
 ```js
 display(Inputs.table(scores))
 ```
 
 ## Chart Sketch
-A bar chart with x-axis representing the scores from 0 to 157 (apparently one restaurant has a score of 157) and a y-axis representing the number of restaurants matching the scores.
+A bar chart with x-axis representing the scores from 0 to 157 (apparently one restaurant has a score of 157) and a y-axis representing the number of inspections matching the scores.
