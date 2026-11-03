@@ -1,0 +1,11 @@
+chain,camis,dba,boro,match,in_sample,note,grade,grade_date,last_inspection,last_status
+Dunkin,40645260,DUNKIN,Queens,branch,true,,A,2025-10-31,2025-10-31,A
+Dunkin,41579661,DUNKIN,Bronx,branch,true,,B,2026-06-17,2026-06-17,B
+Dunkin,41236257,DUNKIN,Brooklyn,branch,true,,C,2026-06-08,2026-08-03,(missing)
+Dunkin,41629686,DUNKIN,Manhattan,branch,true,,,,2022-08-10,N
+Starbucks,40399099,STARBUCKS,Manhattan,branch,true,,A,2026-06-09,2026-06-09,A
+Starbucks,40940279,STARBUCKS,Manhattan,branch,true,,B,2026-08-24,2026-08-24,B
+Starbucks,50168556,STARBUCKS,Manhattan,branch,true,,,,2026-04-27,(missing) | N
+McDonald's,40367790,MCDONALD'S,Brooklyn,branch,true,,A,2026-08-12,2026-08-12,A
+McDonald's,40881083,MCDONALD'S,Queens,branch,true,,B,2026-07-01,2026-07-01,B
+McDonald's,50183892,MCDONALD'S,Manhattan,branch,true,,,,2026-04-30,N

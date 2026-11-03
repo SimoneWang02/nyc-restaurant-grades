@@ -1,0 +1,10 @@
+cuisine,inspections,restaurants,mice,roaches,flies,any_pest,mice_pct,roaches_pct,flies_pct,any_pest_pct,compare
+American,7886,3991,1036,293,1161,2130,13.14,3.72,14.72,27.01,true
+Coffee/Tea,4067,1770,444,73,477,895,10.92,1.79,11.73,22.01,true
+Chinese,3456,1770,832,369,347,1283,24.07,10.68,10.04,37.12,true
+Pizza,2763,1341,533,168,279,842,19.29,6.08,10.1,30.47,true
+Latin American,1936,918,361,169,306,698,18.65,8.73,15.81,36.05,true
+Pakistani,57,31,21,9,12,31,36.84,15.79,21.05,54.39,true
+African,127,69,34,17,37,66,26.77,13.39,29.13,51.97,true
+German,49,28,11,9,10,25,22.45,18.37,20.41,51.02,true
+Ethiopian,22,14,7,3,4,11,31.82,13.64,18.18,50.0,false

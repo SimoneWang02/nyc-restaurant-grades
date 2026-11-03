@@ -66,6 +66,23 @@ npm run build     # static site in dist/
 npm run clean     # clear the Framework cache
 ```
 
+## Q4-Q6 (Yiyang)
+
+Run after `clean.py`. The scripts use pandas, and the chart drafts use matplotlib (`pip install pandas matplotlib`).
+
+```bash
+python3 scripts/download-nta-lookup.py                # 2010 NTA code -> name list, saved in data/reference/
+python3 scripts/question-specific/question-4.py       # chain branches and their latest grade
+python3 scripts/question-specific/question-5.py       # citations per violation code
+python3 scripts/question-specific/question-6.py       # pest citation rates by NTA and cuisine
+python3 scripts/question-specific/plot-q4-q6.py       # base charts for the sketches, saved to ../q4-q6-figures/
+```
+
+- Q5 and Q6 use routine initial inspections from 2023-01-01 to 2026-10-29 (set in `scripts/question-specific/common.py`).
+- The NTA names come from DCP's [2010 Census Tracts](https://data.cityofnewyork.us/City-Government/2010-Census-Tracts/bmjq-373p) table (`ntacode`, `ntaname`), downloaded on 2026-11-02.
+- `data/manual/q4-name-decisions.csv` lists the 12 chain names we checked by hand, with a reason and a source link for each.
+- The write-up for these questions is [docs/Milestone2_Q4-Q6_draft.md](docs/Milestone2_Q4-Q6_draft.md).
+
 ## Repo layout
 
 ```

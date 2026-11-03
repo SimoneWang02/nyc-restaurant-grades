@@ -1,0 +1,11 @@
+nta,nta_name,inspections,restaurants,mice,roaches,flies,any_pest,mice_pct,roaches_pct,flies_pct,any_pest_pct,compare
+MN17,Midtown-Midtown South,3035,1528,264,101,444,723,8.7,3.33,14.63,23.82,true
+MN13,Hudson Yards-Chelsea-Flatiron-Union Square,1404,716,190,48,203,377,13.53,3.42,14.46,26.85,true
+MN23,West Village,1340,697,244,41,205,415,18.21,3.06,15.3,30.97,true
+MN24,SoHo-TriBeCa-Civic Center-Little Italy,1197,575,112,53,184,305,9.36,4.43,15.37,25.48,true
+MN27,Chinatown,915,464,144,73,90,265,15.74,7.98,9.84,28.96,true
+QN52,East Flushing,66,33,23,7,12,36,34.85,10.61,18.18,54.55,true
+BK91,East Flatbush-Farragut,121,52,44,9,20,62,36.36,7.44,16.53,51.24,true
+QN03,Springfield Gardens South-Brookville,53,19,17,1,14,25,32.08,1.89,26.42,47.17,true
+,Missing NTA,891,461,74,36,128,201,8.31,4.04,14.37,22.56,false
+BK46,Ocean Parkway South,29,18,5,2,2,8,17.24,6.9,6.9,27.59,false

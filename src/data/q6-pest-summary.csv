@@ -1,0 +1,5 @@
+pest,label,inspections,pct_inspections
+mice,Mice or evidence of mice,7345,16.3
+roaches,Cockroaches,2628,5.83
+flies,Flies or other nuisance pests,6158,13.66
+any_pest,Any of the three,13644,30.27
