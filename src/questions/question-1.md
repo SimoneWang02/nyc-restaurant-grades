@@ -8,6 +8,8 @@ Every violation adds points, and a score of 0 to 13 earns an A. This page shows 
 
 ## Data Transformation
 
+**Goal:** Get an array of scores, each with their number of matching inspections.
+
 1. Get `inspections` table and keep only first inspections by matching the `inspection_type` to "Cycle Inspection / Initial Inspection"
 2. Group inspections by attribute `score` to get the count for each score
 3. Fill in any score that has no inspection associated, this is important because many scores have no count and cause the charts to skip their bars. (e.g. Score 1 has 0 matches)
