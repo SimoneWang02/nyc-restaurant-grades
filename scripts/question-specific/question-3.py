@@ -2,7 +2,8 @@
 Q3: how much do scores differ by cuisine?
 
 Reads data/interim/inspections.csv and data/interim/restaurants.csv and writes src/data/q3-cuisines.csv
-with the box plot numbers (count, quartiles, whiskers) of first-inspection scores for the 20 most common cuisines
+with the box plot numbers (count, quartiles, whiskers) of first-inspection scores for every cuisine
+with at least MIN_COUNT first inspections
 """
 
 from pathlib import Path
@@ -13,7 +14,9 @@ IN_FILE = Path("data/interim/inspections.csv")
 RESTAURANTS_FILE = Path("data/interim/restaurants.csv")
 OUT_FILE = Path("src/data/q3-cuisines.csv")
 FIRST_INSPECTION = "Cycle Inspection / Initial Inspection"
-TOP_N = 20
+MIN_COUNT = 50  # enough first inspections for a box; the page colors each box by its count
+# Categories that are not a cuisine, so they don't belong in a comparison of cuisines
+NOT_CUISINES = {"Other", "Bottled Beverages"}
 
 inspections = pd.read_csv(IN_FILE, dtype={"camis": str})
 restaurants = pd.read_csv(RESTAURANTS_FILE, dtype={"camis": str})
@@ -32,10 +35,12 @@ no_cuisine = first["cuisine_description"].isna()
 print(f"First inspections with no cuisine (excluded): {no_cuisine.sum():,}")
 first = first[~no_cuisine].rename(columns={"cuisine_description": "cuisine"})
 
-# 3. Keep the 20 cuisines with the most first inspections
-top = first["cuisine"].value_counts().head(TOP_N).index
-first = first[first["cuisine"].isin(top)]
-print(f"Kept {len(first):,} first inspections in the top {TOP_N} cuisines")
+# 3. Drop the non-cuisine categories, then keep cuisines with at least MIN_COUNT first inspections
+first = first[~first["cuisine"].isin(NOT_CUISINES)]
+counts = first["cuisine"].value_counts()
+kept = counts[counts >= MIN_COUNT].index
+first = first[first["cuisine"].isin(kept)]
+print(f"Kept {len(first):,} first inspections in {len(kept)} cuisines with at least {MIN_COUNT} each")
 
 # 4. Count and quartiles per cuisine
 stats = first.groupby("cuisine")["score"].agg(
