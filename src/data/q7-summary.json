@@ -1,0 +1,14 @@
+{
+ "last_inspection_date": "2026-10-29",
+ "n_first_inspections": 46720,
+ "n_missed_a": 18600,
+ "n_a_at_reinspection": 8871,
+ "share_a_at_reinspection": 0.476935,
+ "n_awaiting": 3416,
+ "share_awaiting": 0.183656,
+ "n_no_reinspection": 1061,
+ "share_recovered_of_reinspected": 0.628124,
+ "median_days_to_reinspection": 123.0,
+ "share_reinspected_under_30_days": 0.081286,
+ "n_reinspected_after_a": 846
+}

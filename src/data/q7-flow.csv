@@ -1,0 +1,13 @@
+first_band,outcome,count,share_of_band
+0-13,A at first inspection,28111,0.99968
+0-13,Closed at first inspection,9,0.00032
+14-27,A at re-inspection,5331,0.52188
+14-27,B range at re-inspection,1753,0.17161
+14-27,C range at re-inspection,850,0.083211
+14-27,Awaiting re-inspection,1802,0.176407
+14-27,No re-inspection on file,479,0.046892
+28+,A at re-inspection,3540,0.422182
+28+,B range at re-inspection,1642,0.195826
+28+,C range at re-inspection,1007,0.120095
+28+,Awaiting re-inspection,1614,0.192487
+28+,No re-inspection on file,582,0.06941

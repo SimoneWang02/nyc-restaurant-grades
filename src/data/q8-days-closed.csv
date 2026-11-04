@@ -1,0 +1,9 @@
+days_closed,reopened_first_try,reopened_after_failed_try,count
+0 (same day),0,0,0
+1,26,0,26
+2-3,289,12,301
+4-7,332,121,453
+8-14,122,129,251
+15-30,63,63,126
+31-90,31,25,56
+91+,14,10,24
