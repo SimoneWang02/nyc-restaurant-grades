@@ -35,3 +35,13 @@ display(Inputs.table(nta))
 ```
 
 ## Chart Sketch
+A map of New York where each area is colored by the share of its restaurants that have the selected grade. Darker means a higher share. The radio buttons on the right pick the grade (A, B, C or Pending), and the color scale on the left shows which share each color stands for. The map starts with the boroughs and you can zoom in to see the neighborhoods (NTAs).
+
+![Q2 sketch](../images/q2-sketch.jpeg)
+
+<div class="note">
+    <ul>
+        <li>Why does each grade have its own color scale? Because the shares are very different. Most restaurants have an A, and only a few have a B or a C. On the A scale, every area would look the same color for B and C.</li>
+        <li>Why do the boroughs and the neighborhoods use the same scale? So a color always means the same share. If the borough view had its own scale, small differences between boroughs would look big and the colors would change when you zoom in.</li>
+    </ul>
+</div>

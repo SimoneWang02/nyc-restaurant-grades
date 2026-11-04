@@ -28,3 +28,12 @@ display(Inputs.table(cuisines))
 ```
 
 ## Chart Sketch
+A box plot with one row per cuisine, sorted by median score, and the first-inspection score on the x-axis (lower scores are better). Each box goes from the 25th to the 75th percentile with a line at the median, and the whiskers show how far the usual scores go. Each box is colored by the number of first inspections of the cuisine, from light (few) to dark (many) using a sequential color scale.
+
+![Q3 sketch](../images/q3-sketch.jpeg)
+
+<div class="note">
+    <ul>
+        <li>I haven't colored the IQRs in the sketch. Some of the cuisines represent 50 restaurants while others 8,400 so I thought of using a color channel to display the gap difference. This helps deciding how credibile medians with low count are.</li>
+    </ul>
+</div>

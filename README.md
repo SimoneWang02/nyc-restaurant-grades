@@ -66,7 +66,22 @@ npm run build     # static site in dist/
 npm run clean     # clear the Framework cache
 ```
 
-## Q4-Q6 (Yiyang)
+## Repo layout
+
+```
+observablehq.config.js          site title, sidebar order and stylesheet
+src/custom-style.css            site-wide CSS (Framework defaults plus our tweaks)
+src/index.md                    home page
+src/questions/question-N.md     one page per question (1 to 8)
+src/markdown-cheatsheet.md      Markdown and Framework syntax reference (temporary)
+Project_Proposal.pdf            Milestone 1 proposal
+```
+
+## Work Distribution
+
+### Q1-Q3 (Simone Wang)
+
+### Q4-Q6 (Yiyang)
 
 Run after `clean.py`. The scripts use pandas, and the chart drafts use matplotlib (`pip install pandas matplotlib`).
 
@@ -82,17 +97,6 @@ python3 scripts/question-specific/plot-q4-q6.py       # base charts for the sket
 - The NTA names come from DCP's [2010 Census Tracts](https://data.cityofnewyork.us/City-Government/2010-Census-Tracts/bmjq-373p) table (`ntacode`, `ntaname`), downloaded on 2026-11-02.
 - `data/manual/q4-name-decisions.csv` lists the 12 chain names we checked by hand, with a reason and a source link for each.
 - The write-up for these questions is [docs/Milestone2_Q4-Q6_draft.md](docs/Milestone2_Q4-Q6_draft.md).
-
-## Repo layout
-
-```
-observablehq.config.js          site title, sidebar order and stylesheet
-src/custom-style.css            site-wide CSS (Framework defaults plus our tweaks)
-src/index.md                    home page
-src/questions/question-N.md     one page per question (1 to 8)
-src/markdown-cheatsheet.md      Markdown and Framework syntax reference (temporary)
-Project_Proposal.pdf            Milestone 1 proposal
-```
 
 ## AI Disclosure
 
