@@ -29,6 +29,7 @@ Out of **${d3.format(",")(info.inspections)} inspections**, **${d3.format(",")(i
 
 ```js
 display(Inputs.table(pests, {
+  layout: "auto",
   select: false,
   columns: ["label", "inspections", "pct_inspections"],
   header: {label: "Pest", inspections: "Inspections", pct_inspections: "% of inspections"}
@@ -57,6 +58,7 @@ const rows = (by === "Neighborhood" ? byNta : byCuisine)
   }))
   .sort((a, b) => d3.descending(a.pct, b.pct));
 display(Inputs.table(rows, {
+  layout: "auto",
   select: false,
   columns: ["group", "inspections", "restaurants", "count", "pct"],
   header: {group: by, inspections: "Inspections", restaurants: "Restaurants", count: "With this pest", pct: "%"},

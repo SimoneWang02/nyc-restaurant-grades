@@ -24,7 +24,7 @@ const cuisines = FileAttachment("/data/q3-cuisines.csv").csv({typed: true});
 ## Scores by Cuisine
 
 ```js
-display(Inputs.table(cuisines))
+display(Inputs.table(cuisines, {layout: "auto"}))
 ```
 
 ## Chart Sketch

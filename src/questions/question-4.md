@@ -19,6 +19,7 @@ We look for DUNKIN, STARBUCKS or MCDONALD in the name, and keep the ones that st
 
 ```js
 display(Inputs.table(summary, {
+  layout: "auto",
   select: false,
   columns: ["chain", "branches", "A", "B", "C", "no_grade", "pct_A"],
   header: {chain: "Chain", branches: "Branches", no_grade: "No A/B/C yet", pct_A: "% A (of graded)"}
@@ -36,6 +37,7 @@ const shown = branches
   .filter(d => d.in_sample)
   .filter(d => grade === "All" || (grade === "No A/B/C yet" ? !d.grade : d.grade === grade));
 display(Inputs.table(shown, {
+  layout: "auto",
   select: false,
   columns: ["chain", "camis", "dba", "boro", "grade", "grade_date", "last_status"],
   header: {chain: "Chain", camis: "CAMIS", dba: "Name", boro: "Borough", grade: "Grade", grade_date: "Grade date", last_status: "Latest status"},

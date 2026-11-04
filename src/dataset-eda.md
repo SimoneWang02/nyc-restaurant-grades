@@ -43,7 +43,7 @@ The raw file has ${format(eda.raw.rows)} rows and ${eda.raw.columns} columns, co
 Here are the first 5 rows:
 
 ```js
-display(Inputs.table(eda.raw.head));
+display(Inputs.table(eda.raw.head, {layout: "auto"}));
 ```
 
 ## What each column means
@@ -92,19 +92,19 @@ To see what the split actually does, here's one restaurant (${eda.example.camis}
 The raw rows (just the useful columns):
 
 ```js
-display(Inputs.table(eda.example.raw));
+display(Inputs.table(eda.example.raw, {layout: "auto"}));
 ```
 
 Same restaurant in the inspections table, one row per visit:
 
 ```js
-display(Inputs.table(eda.example.inspections));
+display(Inputs.table(eda.example.inspections, {layout: "auto"}));
 ```
 
 And in the violations table, one row per thing the inspector wrote up:
 
 ```js
-display(Inputs.table(eda.example.violations));
+display(Inputs.table(eda.example.violations, {layout: "auto"}));
 ```
 
 ## The three tables
@@ -114,7 +114,7 @@ display(Inputs.table(eda.example.violations));
 One row per restaurant, with its name, cuisine, borough and location. ${format(eda.tables.restaurants.rows)} rows total.
 
 ```js
-display(Inputs.table(eda.tables.restaurants.head));
+display(Inputs.table(eda.tables.restaurants.head, {layout: "auto"}));
 ```
 
 ### Inspections
@@ -122,7 +122,7 @@ display(Inputs.table(eda.tables.restaurants.head));
 One row per visit, with the score, the grade and what the inspector did. ${format(eda.tables.inspections.rows)} rows.
 
 ```js
-display(Inputs.table(eda.tables.inspections.head));
+display(Inputs.table(eda.tables.inspections.head, {layout: "auto"}));
 ```
 
 ### Violations
@@ -130,7 +130,7 @@ display(Inputs.table(eda.tables.inspections.head));
 One row per violation, with the code, what it means and whether it's critical. ${format(eda.tables.violations.rows)} rows.
 
 ```js
-display(Inputs.table(eda.tables.violations.head));
+display(Inputs.table(eda.tables.violations.head, {layout: "auto"}));
 ```
 
 ### What's still missing
@@ -142,7 +142,7 @@ const table = view(Inputs.radio(["restaurants", "inspections", "violations"], {l
 ```
 
 ```js
-display(Inputs.table(eda.tables[table].missing, {sort: "missing", reverse: true, format: {missing: format, share: percentage}}));
+display(Inputs.table(eda.tables[table].missing, {layout: "auto", sort: "missing", reverse: true, format: {missing: format, share: percentage}}));
 ```
 
 ## The columns we care about most
@@ -152,7 +152,7 @@ Our questions filter or group by these, so it's worth knowing which values show 
 ### Inspection type
 
 ```js
-display(Inputs.table(eda.counts.inspection_type, {format: countFormat}));
+display(Inputs.table(eda.counts.inspection_type, {layout: "auto", format: countFormat}));
 ```
 
 ### Grade
@@ -160,25 +160,25 @@ display(Inputs.table(eda.counts.inspection_type, {format: countFormat}));
 Lots of inspections have no grade, and that's mostly on purpose. If a restaurant scores over 13 on its first visit, it doesn't get a grade until the inspector comes back. N, Z and P all mean "pending" in some way: not graded yet, grade pending, and pending after a reopening.
 
 ```js
-display(Inputs.table(eda.counts.grade, {format: countFormat}));
+display(Inputs.table(eda.counts.grade, {layout: "auto", format: countFormat}));
 ```
 
 ### Action
 
 ```js
-display(Inputs.table(eda.counts.action, {format: countFormat}));
+display(Inputs.table(eda.counts.action, {layout: "auto", format: countFormat}));
 ```
 
 ### Borough (restaurants)
 
 ```js
-display(Inputs.table(eda.counts.boro, {format: countFormat}));
+display(Inputs.table(eda.counts.boro, {layout: "auto", format: countFormat}));
 ```
 
 ### Critical flag (violations)
 
 ```js
-display(Inputs.table(eda.counts.critical_flag, {format: countFormat}));
+display(Inputs.table(eda.counts.critical_flag, {layout: "auto", format: countFormat}));
 ```
 
 ## Inspections per year

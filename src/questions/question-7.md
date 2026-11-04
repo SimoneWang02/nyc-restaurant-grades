@@ -59,6 +59,7 @@ Days from the first inspection to the re-inspection, in 30-day bins, for first i
 
 ```js
 Inputs.table(days, {
+  layout: "auto",
   columns: ["days", "count_14_27", "count_28_plus", "count", "share"],
   header: {days: "Days", count_14_27: "First 14–27", count_28_plus: "First 28+", count: "Total", share: "Share"},
   format: {count_14_27: format, count_28_plus: format, count: format, share: percentage},

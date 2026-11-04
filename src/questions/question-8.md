@@ -84,6 +84,7 @@ Days closed, for closures that reopened, split by whether a reopening attempt fa
 
 ```js
 Inputs.table(daysClosed, {
+  layout: "auto",
   columns: ["days_closed", "reopened_first_try", "reopened_after_failed_try", "count"],
   header: {days_closed: "Days closed", reopened_first_try: "First try", reopened_after_failed_try: "After a failed try", count: "All"},
   format: {reopened_first_try: format, reopened_after_failed_try: format, count: format},

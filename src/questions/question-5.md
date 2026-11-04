@@ -22,6 +22,7 @@ We use the critical flag on each row. 09A has both flags.
 
 ```js
 display(Inputs.table(flags, {
+  layout: "auto",
   select: false,
   columns: ["flag", "citations", "pct_citations"],
   header: {flag: "Flag", citations: "Citations", pct_citations: "% of citations"}
@@ -36,6 +37,7 @@ const show = view(Inputs.select(["Top 15", "All codes"], {label: "Show"}));
 
 ```js
 display(Inputs.table(show === "Top 15" ? codes.slice(0, 15) : codes, {
+  layout: "auto",
   select: false,
   columns: ["code", "label", "citations", "critical", "not_critical", "pct_inspections"],
   header: {code: "Code", label: "Violation", citations: "Citations", critical: "Critical", not_critical: "Not Critical", pct_inspections: "% of inspections"},

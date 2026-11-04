@@ -25,13 +25,13 @@ const nta = FileAttachment("/data/q2-nta.csv").csv({typed: true});
 ## Grades by Borough
 
 ```js
-display(Inputs.table(boroughs))
+display(Inputs.table(boroughs, {layout: "auto"}))
 ```
 
 ## Grades by NTA
 
 ```js
-display(Inputs.table(nta))
+display(Inputs.table(nta, {layout: "auto"}))
 ```
 
 ## Chart Sketch
