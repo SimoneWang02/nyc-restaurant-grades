@@ -99,3 +99,7 @@ Project_Proposal.pdf            Milestone 1 proposal
 ### Simone Wang
 
 Used Claude to help polish writing, find background sources, scaffold and check code, write python scripts and set up the GitHub Pages deployment.
+
+### Yiyang Zhang
+
+I used ChatGPT to get suggestions on optimizing the project's directory structure, translate several technical terms, and rewrite tens of words or sentences in the documentation to improve readability. I also made 5-10 searches using Google Gemini.
