@@ -98,6 +98,19 @@ python3 scripts/question-specific/plot-q4-q6.py       # base charts for the sket
 - `data/manual/q4-name-decisions.csv` lists the 12 chain names we checked by hand, with a reason and a source link for each.
 - The write-up for these questions is [docs/Milestone2_Q4-Q6_draft.md](docs/Milestone2_Q4-Q6_draft.md).
 
+### Q7-Q8 (Yabo Wang)
+
+Run after `clean.py`. The scripts use pandas and numpy.
+
+```bash
+python3 scripts/question-specific/question-7.py   # pairs each first inspection with its re-inspection
+python3 scripts/question-specific/question-8.py   # follows each closure to its reopening
+```
+
+- Both write small CSV and JSON files to `src/data/` (`q7-*`, `q8-*`), which the Q7 and Q8 pages read.
+- Q7 and Q8 use all routine initial inspections in the snapshot, so their shares of first inspections differ slightly from Q5 and Q6, which start on 2023-01-01.
+- The sketches in `src/sketches/` were made with Matplotlib from the processed data tables.
+
 ## AI Disclosure
 
 ### Simone Wang
@@ -107,3 +120,7 @@ Used Claude to help polish writing, find background sources, scaffold and check 
 ### Yiyang Zhang
 
 I used ChatGPT to get suggestions on optimizing the project's directory structure, translate several technical terms, and rewrite tens of words or sentences in the documentation to improve readability. I also made 5-10 searches using Google Gemini.
+
+### Yabo Wang
+
+Used Claude to write python scripts and polish the text of the Q7 and Q8 pages.
