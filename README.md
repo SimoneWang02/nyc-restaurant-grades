@@ -109,7 +109,6 @@ python3 scripts/question-specific/question-8.py   # follows each closure to its 
 
 - Both write small CSV and JSON files to `src/data/` (`q7-*`, `q8-*`), which the Q7 and Q8 pages read.
 - Q7 and Q8 use all routine initial inspections in the snapshot, so their shares of first inspections differ slightly from Q5 and Q6, which start on 2023-01-01.
-- The sketches in `src/sketches/` were made with Matplotlib from the processed data tables.
 
 ## AI Disclosure
 
@@ -123,4 +122,4 @@ I used ChatGPT to get suggestions on optimizing the project's directory structur
 
 ### Yabo Wang
 
-Used Claude to write python scripts and polish the text of the Q7 and Q8 pages.
+Used Claude to write Python scripts, verify how Q7 pairs first inspections with re-inspections and how Q8 matches closures to reopenings, and polish the text of the Q7 and Q8 pages.
