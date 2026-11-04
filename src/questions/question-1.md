@@ -25,7 +25,7 @@ display(Inputs.table(scores))
 ```
 
 ## Chart Sketch
-A bar chart with x-axis representing the scores from 0 to 157 (apparently one restaurant has a score of 157) and a y-axis representing the number of inspections matching the scores.
+A bar chart with x-axis representing the scores from 0 to 157 (apparently one restaurant has a score of 157) and a y-axis representing the number of inspections matching the scores. Mark the A cutoff. Hovering a bar shows the count.
 
 ![Q1 sketch](../images/q1-sketch.jpeg)
 
