@@ -49,6 +49,8 @@ All three chains are about 98-99% A. Only 11 B's and one C in 951 branches.
 
 ## Planned chart
 
-(placeholder)
+Base chart is firstly drawn by python(matplotlib), then add some elements by hand.
+
+![Q4 sketch](../images/q4-sketch.jpg)
 
 Each chain is a row and each grade is a column: A, B, C and no A/B/C yet. Each dot is one branch, and a hollow dot means no letter. Each row shows its n. When you hover a dot, it shows the branch name, borough, grade date and latest status.

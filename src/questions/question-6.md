@@ -66,6 +66,8 @@ display(Inputs.table(rows, {
 
 ## Planned chart
 
-(placeholder)
+Base chart is firstly drawn by python(matplotlib), then add some elements by hand.
+
+![Q6 sketch](../images/q6-sketch.jpg)
 
 Two dot plots, one for neighborhoods and one for cuisines, on the same 0-100% axis. A dashed line shows the citywide rate. Each dot has its count next to it (with a pest / all inspections). There will be a switch for the three pests and "any", and a borough filter for neighborhoods. When you hover a dot, it shows how many restaurants and inspections.

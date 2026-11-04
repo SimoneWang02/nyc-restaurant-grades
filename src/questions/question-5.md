@@ -51,6 +51,8 @@ ${codes[0].code} (${codes[0].label}) is the most common one, it shows up in ${co
 
 ## Planned chart
 
-(placeholder)
+Base chart is firstly drawn by python(matplotlib), then add some elements by hand.
+
+![Q5 sketch](../images/q5-sketch.jpg)
 
 Bars for the top 15 codes, sorted by count, and the x-axis starts at 0. Each bar is split into Critical and Not Critical. When you hover a bar, it shows the full description and the % of inspections. A toggle switches to all codes.

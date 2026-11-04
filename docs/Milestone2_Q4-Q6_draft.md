@@ -67,7 +67,7 @@ not used here.
 
 **Sketch**
 
-(placeholder)
+![Q4 sketch](../src/images/q4-sketch.jpg)
 
 Each chain is a row, each grade is a column, and each dot is one branch. A filled dot has a
 letter, a hollow dot has no A/B/C yet. The count is above each group of dots, and n is next to
@@ -114,7 +114,7 @@ and the rarest one.
 
 **Sketch**
 
-(placeholder1)
+![Q5 sketch](../src/images/q5-sketch.jpg)
 
 Bars for the top 15 codes, sorted by count, and the x-axis starts at 0. Red with lines is
 Critical, gray is Not Critical. If a code has both, its bar is split in two. In the D3 version,
@@ -170,7 +170,7 @@ rates, the missing group and one small group.
 
 **Sketch**
 
-(placeholder)
+![Q6 sketch](../src/images/q6-sketch.jpg)
 
 Two dot plots, neighborhoods on the left and cuisines on the right, on the same 0-100% axis.
 The dashed line is the citywide rate. This draft only shows the 8 most inspected groups, and for
