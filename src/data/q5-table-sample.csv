@@ -1,0 +1,11 @@
+code,label,citations,critical,not_critical,other_flag,pct_inspections,description
+10F,Non-food-contact surfaces,23797,0,23797,0,52.8,"Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit."
+08A,Pest entry or harborage conditions,13564,0,13564,0,30.09,"Establishment is not free of harborage or conditions conducive to rodents, insects or other pests."
+02G,Cold holding temperature,11231,11231,0,0,24.92,Cold TCS food item held above 41 °F; smoked or processed fish held above 38 °F; intact raw eggs held above 45 °F; or reduced oxygen packaged (ROP) TCS foods held above required temperatures except during active necessary preparation.
+06D,Food-contact surface cleaning,11208,11208,0,0,24.87,"Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred."
+06C,Food or equipment protection,10164,10164,0,0,22.55,"Food, supplies, or equipment not protected from potential source of contamination during storage, preparation, transportation, display, service or from customer’s refillable, reusable container. Condiments not in single-service containers or dispensed directly by the vendor."
+10B,Plumbing and drainage,10152,0,10152,0,22.52,Anti-siphonage or back-flow prevention device not provided where required; equipment or floor not properly drained; sewage disposal system in disrepair or not functioning properly. Condensation or liquid waste improperly disposed of.
+02B,Hot holding temperature,8537,8537,0,0,18.94,Hot TCS food item not held at or above 140 °F.
+04L,Mice or evidence of mice,7345,7345,0,0,16.3,Evidence of mice or live mice in establishment's food or non-food areas.
+09A,Damaged canned food,522,175,347,0,1.16,"Swollen, leaking, rusted or otherwise damaged canned food to be returned to distributor not segregated from intact product and clearly labeled DO NOT USE"
+06H,HACCP records,1,1,0,0,0.0,Records and logs not maintained to show that approved HACCP plan has been properly implemented.

@@ -1,0 +1,11 @@
+{
+  "start": "2023-01-01",
+  "end": "2026-10-29",
+  "inspections": 45073,
+  "restaurants": 22066,
+  "older_inspections_left_out": 1647,
+  "violation_rows": 152142,
+  "duplicates_dropped": 137,
+  "citations": 152005,
+  "codes": 67
+}

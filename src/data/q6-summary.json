@@ -1,0 +1,14 @@
+{
+  "start": "2023-01-01",
+  "end": "2026-10-29",
+  "inspections": 45073,
+  "restaurants": 22066,
+  "older_inspections_left_out": 1647,
+  "violation_rows": 152142,
+  "duplicates_dropped": 137,
+  "citations": 152005,
+  "any_pest": 13644,
+  "any_pest_pct": 30.27,
+  "missing_nta": 891,
+  "min_inspections": 30
+}

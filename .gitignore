@@ -1,6 +1,7 @@
 .DS_Store
 /dist/
 node_modules/
+__pycache__/
 yarn-error.log
 
 # Raw dataset is large; keep it out of git.
