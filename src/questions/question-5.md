@@ -25,7 +25,7 @@ display(Inputs.table(flags, {
   layout: "auto",
   select: false,
   columns: ["flag", "citations", "pct_citations"],
-  header: {flag: "Flag", citations: "Citations", pct_citations: "% of citations"}
+  header: {flag: "Flag", citations: "Citations", pct_citations: "% of citations"}, format: {pct_citations: d=> d.toFixed(1)}
 }));
 ```
 
@@ -41,7 +41,7 @@ display(Inputs.table(show === "Top 15" ? codes.slice(0, 15) : codes, {
   select: false,
   columns: ["code", "label", "citations", "critical", "not_critical", "pct_inspections"],
   header: {code: "Code", label: "Violation", citations: "Citations", critical: "Critical", not_critical: "Not Critical", pct_inspections: "% of inspections"},
-  width: {code: 50, label: 260}
+  width: {code: 50, label: 260}, format: {pct_inspections: d=> d.toFixed(1)}
 }));
 ```
 

@@ -32,7 +32,7 @@ display(Inputs.table(pests, {
   layout: "auto",
   select: false,
   columns: ["label", "inspections", "pct_inspections"],
-  header: {label: "Pest", inspections: "Inspections", pct_inspections: "% of inspections"}
+  header: {label: "Pest", inspections: "Inspections", pct_inspections: "% of inspections"}, format: {pct_inspections: d=> d.toFixed(1)}
 }));
 ```
 
@@ -62,7 +62,7 @@ display(Inputs.table(rows, {
   select: false,
   columns: ["group", "inspections", "restaurants", "count", "pct"],
   header: {group: by, inspections: "Inspections", restaurants: "Restaurants", count: "With this pest", pct: "%"},
-  width: {group: 300}
+  width: {group: 300}, format: {pct: d=> d.toFixed(1)}
 }));
 ```
 
