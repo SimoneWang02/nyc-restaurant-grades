@@ -45,6 +45,6 @@ A box plot with one row per cuisine, sorted by median score, and the first-inspe
 
 <div class="note">
     <ul>
-        <li>I haven't colored the IQRs in the sketch. Some of the cuisines represent 50 restaurants while others 8,400 so I thought of using a color channel to display the gap difference. This helps deciding how credibile medians with low count are.</li>
+        <li>I haven't colored the IQRs in the sketch. Some cuisines have only 50 first inspections while others have several thousand, so I thought of using a color channel to show this difference. This helps decide how credible medians with a low count are.</li>
     </ul>
 </div>
