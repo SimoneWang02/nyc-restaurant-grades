@@ -74,12 +74,25 @@ src/custom-style.css            site-wide CSS (Framework defaults plus our tweak
 src/index.md                    home page
 src/questions/question-N.md     one page per question (1 to 8)
 src/markdown-cheatsheet.md      Markdown and Framework syntax reference (temporary)
-Project_Proposal.pdf            Milestone 1 proposal
+Milestone1_Proposal.pdf         Milestone 1 proposal
+Milestone1_Feedback.pdf         Milestone 1 feedback from the instructors
 ```
 
 ## Work Distribution
 
 ### Q1-Q3 (Simone Wang)
+
+Run after `clean.py`. The scripts use pandas (`pip install pandas`).
+
+```bash
+python3 scripts/question-specific/question-1.py   # number of first inspections per score
+python3 scripts/question-specific/question-2.py   # latest grade per restaurant, counted by NTA and borough
+python3 scripts/question-specific/question-3.py   # box plot numbers of first-inspection scores per cuisine
+```
+
+- Each script writes one or two CSV files to `src/data/` (`q1-*`, `q2-*`, `q3-*`), which the Q1, Q2 and Q3 pages read.
+- Q1 and Q3 use only first inspections ("Cycle Inspection / Initial Inspection") that have a score.
+- Q3 keeps cuisines with at least 50 first inspections (`MIN_COUNT` in `question-3.py`).
 
 ### Q4-Q6 (Yiyang)
 
