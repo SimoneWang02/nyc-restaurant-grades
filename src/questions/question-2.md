@@ -25,18 +25,29 @@ Besides A, B and C, the data also has N (not yet graded), Z (grade pending) and 
 ```js
 const boroughs = FileAttachment("/data/q2-boro.csv").csv({typed: true});
 const nta = FileAttachment("/data/q2-nta.csv").csv({typed: true});
+
+// Readable column names for the tables below
+const header = {
+  nta: "NTA",
+  boro: "Borough",
+  count_A: "A",
+  count_B: "B",
+  count_C: "C",
+  count_pending: "Pending",
+  total_count: "Total"
+};
 ```
 
 ## Grades by Borough
 
 ```js
-display(Inputs.table(boroughs, {layout: "auto"}))
+display(Inputs.table(boroughs, {layout: "auto", header}))
 ```
 
 ## Grades by NTA
 
 ```js
-display(Inputs.table(nta, {layout: "auto"}))
+display(Inputs.table(nta, {layout: "auto", header}))
 ```
 
 ## Chart Sketch

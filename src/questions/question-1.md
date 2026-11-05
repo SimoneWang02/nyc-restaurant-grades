@@ -21,7 +21,10 @@ const scores = FileAttachment("/data/q1-scores.csv").csv({typed: true});
 ## Inspections by Score
 
 ```js
-display(Inputs.table(scores, {layout: "auto"}))
+display(Inputs.table(scores, {
+  layout: "auto",
+  header: {score: "Score", count: "First inspections"}
+}))
 ```
 
 ## Chart Sketch
