@@ -23,6 +23,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from common import GRADE_CARD  # same card names as Q2 and Q4
+
 IN_FILE = Path("data/interim/inspections.csv")
 OUT_DIR = Path("src/data")
 FIRST = "Cycle Inspection / Initial Inspection"
@@ -43,8 +45,6 @@ OUTCOMES = [
     "No first-inspection score",
 ]
 ORDER = {name: i for i, name in enumerate(BANDS + OUTCOMES)}  # display order of the rows
-GRADE_CARD = {"A": "A", "B": "B", "C": "C", "Z": "Grade Pending", "P": "Grade Pending",
-              "N": "Not Yet Graded"}
 
 
 def band(score):

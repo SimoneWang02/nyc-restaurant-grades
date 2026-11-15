@@ -2,15 +2,16 @@
 Q4: do branches of the same chain get similar grades?
 
 Run from the repo root: python3 scripts/question-specific/question-4.py
-Finds Dunkin, Starbucks and McDonald's branches by name, takes each branch's latest
-A/B/C grade and counts grades per chain. Writes src/data/q4-*.csv
+Finds Dunkin, Starbucks and McDonald's branches by name, takes each branch's current grade
+(current_grades in common.py, the same definition as Q2) and counts the grade cards per chain.
+Writes src/data/q4-*.csv
 """
 
 import re
 
 import pandas as pd
 
-from common import read, save
+from common import CARDS, current_grades, read, save
 
 BRANDS = {"Dunkin": r"DUNKIN", "Starbucks": r"STARBUCKS", "McDonald's": r"MC\s*DONALD"}
 # A branch's name starts with the brand ("DUNKIN'", not "THE JUICE HOUSE NEAR DUNKIN")
@@ -57,26 +58,20 @@ chains.loc[is_checked, "match"] = "checked by hand"
 chains.loc[is_checked, "in_sample"] = chains.loc[is_checked, "camis"].map(decisions.set_index("camis")["in_sample"].eq("true"))
 chains.loc[is_checked, "note"] = chains.loc[is_checked, "camis"].map(decisions.set_index("camis")["reason"])
 
-# 3. Latest A/B/C grade for each branch, by grade date then inspection date.
-# A later N/Z/P (not graded yet / pending) does not replace it; we keep it as last_status
+# 3. Current grade of each branch: the grade of its most recent graded inspection, so a later
+# N, Z or P replaces an earlier A, B or C. latest_letter keeps that earlier letter for the details
 chain_inspections = inspections[inspections["camis"].isin(chains["camis"])]
-letters = chain_inspections[chain_inspections["grade"].isin(["A", "B", "C"]) & (chain_inspections["grade_date"] != "")]
-letters = letters.sort_values(["camis", "grade_date", "inspection_date"])
-latest = letters.groupby("camis").tail(1)
+current = current_grades(chain_inspections).set_index("camis")
+for col in ["grade", "card", "grade_date", "latest_letter", "latest_letter_date"]:
+    chains[col] = chains["camis"].map(current[col]).fillna("")
 
-# Check: no branch has two different letters on its latest date
-same_day = letters.merge(latest[["camis", "grade_date", "inspection_date"]])
-assert same_day.groupby("camis")["grade"].nunique().max() == 1, "two letters on the same latest date"
-
-# Grade(s) recorded at the most recent inspection, whatever they are
+# Grade(s) recorded at the most recent inspection, whatever they are (blank if it wasn't graded)
 last_date = chain_inspections.groupby("camis")["inspection_date"].max()
 on_last = chain_inspections[chain_inspections["inspection_date"] == chain_inspections["camis"].map(last_date)]
 on_last = on_last[["camis", "grade"]].replace({"grade": {"": "(missing)"}})
 on_last = on_last.drop_duplicates().sort_values(["camis", "grade"])
 last_status = on_last.groupby("camis")["grade"].agg(" | ".join)
 
-chains["grade"] = chains["camis"].map(latest.set_index("camis")["grade"]).fillna("")
-chains["grade_date"] = chains["camis"].map(latest.set_index("camis")["grade_date"]).fillna("")
 chains["last_inspection"] = chains["camis"].map(last_date)
 chains["last_status"] = chains["camis"].map(last_status)
 
@@ -86,33 +81,37 @@ chains["in_sample"] = chains["in_sample"].astype(bool)
 chains["order"] = chains["chain"].map({brand: i for i, brand in enumerate(BRANDS)}).fillna(len(BRANDS))
 chains = chains.sort_values(["order", "dba", "camis"])
 branches = chains[["chain", "camis", "dba", "boro", "match", "in_sample", "note",
-                   "grade", "grade_date", "last_inspection", "last_status"]]
+                   "card", "grade", "grade_date", "latest_letter", "latest_letter_date",
+                   "last_inspection", "last_status"]]
 
-# 4. Count grades per chain. The A share only uses branches that have a letter
+# 4. Count the cards per chain. Like Q2, the A share is out of the branches that have a grade
+# (A, B, C, Grade Pending or Not Yet Graded); branches never graded are counted on their own
 rows = []
 for brand in BRANDS:
     sample = branches[(branches["chain"] == brand) & branches["in_sample"]]
-    counts = sample["grade"].value_counts()
-    graded = sum(counts.get(g, 0) for g in "ABC")
+    counts = sample["card"].value_counts()
+    with_grade = sum(counts.get(card, 0) for card in CARDS)
     rows.append({
         "chain": brand,
         "branches": len(sample),
         "A": counts.get("A", 0),
         "B": counts.get("B", 0),
         "C": counts.get("C", 0),
-        "no_grade": len(sample) - graded,
-        "pct_A": round(100 * counts.get("A", 0) / graded, 2),
+        "grade_pending": counts.get("Grade Pending", 0),
+        "not_graded": counts.get("Not Yet Graded", 0),
+        "never_graded": len(sample) - with_grade,
+        "pct_A": round(100 * counts.get("A", 0) / with_grade, 2),
         "left_out": int(((branches["chain"] == brand) & ~branches["in_sample"]).sum()),
     })
 summary = pd.DataFrame(rows)
 print(summary)
 
-# 5. Sample for the report: one branch per grade (and one without a grade) for each chain
+# 5. Sample for the report: one branch per card (and one never graded) for each chain
 picks = []
 for brand in BRANDS:
     sample = branches[(branches["chain"] == brand) & branches["in_sample"]]
-    for grade in ["A", "B", "C", ""]:
-        picks += list(sample[sample["grade"] == grade].index[:1])
+    for card in CARDS + [""]:
+        picks += list(sample[sample["card"] == card].index[:1])
 
 save(branches, "q4-branches.csv")
 save(summary, "q4-chain-summary.csv")

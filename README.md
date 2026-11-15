@@ -86,7 +86,7 @@ Run after `clean.py`. The scripts use pandas (`pip install pandas`).
 
 ```bash
 python3 scripts/question-specific/question-1.py   # number of first inspections per score
-python3 scripts/question-specific/question-2.py   # latest grade per restaurant, counted by NTA and borough
+python3 scripts/question-specific/question-2.py   # current grade per restaurant (shared with Q4), counted by NTA and borough
 python3 scripts/question-specific/question-3.py   # box plot numbers of first-inspection scores per cuisine
 ```
 
@@ -100,7 +100,7 @@ Run after `clean.py`. The scripts use pandas, and the chart drafts use matplotli
 
 ```bash
 python3 scripts/download-nta-lookup.py                # 2010 NTA code -> name list, saved in data/reference/
-python3 scripts/question-specific/question-4.py       # chain branches and their latest grade
+python3 scripts/question-specific/question-4.py       # chain branches and their current grade (shared with Q2)
 python3 scripts/question-specific/question-5.py       # citations per violation code
 python3 scripts/question-specific/question-6.py       # pest citation rates by NTA and cuisine
 python3 scripts/question-specific/plot-q4-q6.py       # base charts for the sketches, saved to ../q4-q6-figures/

@@ -1,11 +1,12 @@
-chain,camis,dba,boro,match,in_sample,note,grade,grade_date,last_inspection,last_status
-Dunkin,40645260,DUNKIN,Queens,branch,true,,A,2025-10-31,2025-10-31,A
-Dunkin,41579661,DUNKIN,Bronx,branch,true,,B,2026-06-17,2026-06-17,B
-Dunkin,41236257,DUNKIN,Brooklyn,branch,true,,C,2026-06-08,2026-08-03,(missing)
-Dunkin,41629686,DUNKIN,Manhattan,branch,true,,,,2022-08-10,N
-Starbucks,40399099,STARBUCKS,Manhattan,branch,true,,A,2026-06-09,2026-06-09,A
-Starbucks,40940279,STARBUCKS,Manhattan,branch,true,,B,2026-08-24,2026-08-24,B
-Starbucks,50168556,STARBUCKS,Manhattan,branch,true,,,,2026-04-27,(missing) | N
-McDonald's,40367790,MCDONALD'S,Brooklyn,branch,true,,A,2026-08-12,2026-08-12,A
-McDonald's,40881083,MCDONALD'S,Queens,branch,true,,B,2026-07-01,2026-07-01,B
-McDonald's,50183892,MCDONALD'S,Manhattan,branch,true,,,,2026-04-30,N
+chain,camis,dba,boro,match,in_sample,note,card,grade,grade_date,latest_letter,latest_letter_date,last_inspection,last_status
+Dunkin,40645260,DUNKIN,Queens,branch,true,,A,A,2025-10-31,A,2025-10-31,2025-10-31,A
+Dunkin,41579661,DUNKIN,Bronx,branch,true,,B,B,2026-06-17,B,2026-06-17,2026-06-17,B
+Dunkin,41236257,DUNKIN,Brooklyn,branch,true,,C,C,2026-06-08,C,2026-06-08,2026-08-03,(missing)
+Dunkin,41466825,DUNKIN,Manhattan,branch,true,,Grade Pending,Z,2026-10-08,A,2026-01-07,2026-10-08,(missing) | Z
+Dunkin,41629686,DUNKIN,Manhattan,branch,true,,Not Yet Graded,N,2022-08-10,,,2022-08-10,N
+Starbucks,40399099,STARBUCKS,Manhattan,branch,true,,A,A,2026-06-09,A,2026-06-09,2026-06-09,A
+Starbucks,40940279,STARBUCKS,Manhattan,branch,true,,B,B,2026-08-24,B,2026-08-24,2026-08-24,B
+Starbucks,50168556,STARBUCKS,Manhattan,branch,true,,Not Yet Graded,N,2026-04-27,,,2026-04-27,(missing) | N
+McDonald's,40367790,MCDONALD'S,Brooklyn,branch,true,,A,A,2026-08-12,A,2026-08-12,2026-08-12,A
+McDonald's,40881083,MCDONALD'S,Queens,branch,true,,B,B,2026-07-01,B,2026-07-01,2026-07-01,B
+McDonald's,50183892,MCDONALD'S,Manhattan,branch,true,,Not Yet Graded,N,2026-04-30,,,2026-04-30,N

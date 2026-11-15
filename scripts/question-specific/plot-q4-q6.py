@@ -21,7 +21,7 @@ OUT_DIR = Path("../q4-q6-figures")
 A4 = (11.69, 8.27)  # landscape, inches
 
 # The empty top part of each page is for drawing controls
-GRADE_COLORS = {"A": "#4e79a7", "B": "#f28e2b", "C": "#e15759", "": "white"}
+GRADE_COLORS = {"A": "#4e79a7", "B": "#f28e2b", "C": "#e15759", "Grade Pending": "white", "Not Yet Graded": "white"}
 plt.rcParams.update({"font.size": 11, "axes.spines.top": False, "axes.spines.right": False})
 
 
@@ -35,22 +35,23 @@ def q4():
     fig, ax = plt.subplots(figsize=A4)
     chains = ["Dunkin", "Starbucks", "McDonald's"]
     for row, chain in enumerate(chains):
-        grades = branches[branches["chain"] == chain]["grade"]
-        for col, grade in enumerate(["A", "B", "C", ""]):
-            n = (grades == grade).sum()
+        cards = branches[branches["chain"] == chain]["card"]
+        for col, card in enumerate(GRADE_COLORS):
+            n = (cards == card).sum()
             # dots in rows of 20 inside each grade column, with the count above them
             xs = [col * 25 + i % 20 for i in range(n)]
             ys = [row * 30 + i // 20 for i in range(n)]
-            ax.scatter(xs, ys, s=10, color=GRADE_COLORS[grade], edgecolors="none" if grade else "gray", linewidths=.7)
+            letter = card in ["A", "B", "C"]
+            ax.scatter(xs, ys, s=10, color=GRADE_COLORS[card], edgecolors="none" if letter else "gray", linewidths=.7)
             ax.text(col * 25 - .5, row * 30 - 2, n, fontsize=10)
-    ax.set_xticks([9.5, 34.5, 59.5, 84.5], ["A", "B", "C", "No A/B/C yet"])
+    ax.set_xticks([col * 25 + 9.5 for col in range(len(GRADE_COLORS))], list(GRADE_COLORS))
     ax.xaxis.tick_top()
     ax.set_yticks([12, 42, 72], [f"{c}\n(n = {(branches['chain'] == c).sum()})" for c in chains])
     ax.set_ylim(90, -5)
     ax.tick_params(length=0)
     for spine in ax.spines.values():
         spine.set_visible(False)
-    fig.subplots_adjust(top=.7, bottom=.08, left=.15, right=.95)
+    fig.subplots_adjust(top=.7, bottom=.08, left=.15, right=.9)
     return fig
 
 

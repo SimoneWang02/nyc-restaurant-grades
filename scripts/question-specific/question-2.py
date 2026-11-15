@@ -1,37 +1,33 @@
 """
 Q2: how are the shares of the grades by NTA and borough?
 
-Reads data/interim/inspections.csv, for each restaurant keep the most recent inspection grade and group by NTA and borough
+Reads data/interim/inspections.csv, takes each restaurant's current grade (current_grades in
+common.py, the same definition as Q4) and counts the grade cards by NTA and borough
+Run from the repo root: python3 scripts/question-specific/question-2.py
 """
 
 from pathlib import Path
 
 import pandas as pd
 
-IN_FILE = Path("data/interim/inspections.csv")
+from common import CARDS, current_grades, read
+
 NTA_OUT_FILE = Path("src/data/q2-nta.csv")
 BORO_OUT_FILE = Path("src/data/q2-boro.csv")
-RESTAURANTS_FILE = Path("data/interim/restaurants.csv")
 
-inspections = pd.read_csv(IN_FILE, dtype={"camis": str})
-restaurants = pd.read_csv(RESTAURANTS_FILE, dtype={"camis": str})
+inspections = read("inspections")
+restaurants = read("restaurants")
 print(f"Read {len(inspections):,} inspections")
 
-# Remove rows with NaN grades and sort by "inspection_date"
-inspections = inspections.dropna(subset=["grade"]).sort_values("inspection_date", kind="stable")
-
-# Group by "camis" and keep last inspection grade
-by_restaurant = inspections.groupby("camis").tail(1).copy()
+# One row per restaurant: the grade of its most recent graded inspection, and the card it posts.
+# N becomes "Not Yet Graded", Z and P become "Grade Pending", like the cards in the window
+by_restaurant = current_grades(inspections)
 
 restaurants_with_no_grade = len(restaurants) - len(by_restaurant)
 
 print(f"Restaurants with no grade: {restaurants_with_no_grade}")
 
-# N (not yet graded), Z (grade pending) and P (pending, issued at reopening) all mean the restaurant has no letter grade yet, so they become one "Pending" group
-PENDING = {"N": "Pending", "Z": "Pending", "P": "Pending"}
-by_restaurant["grade_group"] = by_restaurant["grade"].replace(PENDING)
-
-grade_counts = by_restaurant["grade_group"].value_counts()
+grade_counts = by_restaurant["card"].value_counts()
 
 print(grade_counts)
 print(f"Total: {grade_counts.sum():,}")
@@ -43,7 +39,7 @@ by_restaurant = by_restaurant.merge(
 
 # Restaurants without an NTA can't go on the map. We drop them from both the NTA and the
 # borough tables, so each borough total is exactly the sum of its neighborhoods
-no_nta = by_restaurant["nta"].isna()
+no_nta = by_restaurant["nta"].fillna("") == ""
 print(f"Restaurants with no NTA (excluded): {no_nta.sum():,}")
 by_restaurant = by_restaurant[~no_nta].copy()
 
@@ -70,9 +66,9 @@ print(f"Restaurants on the map: {len(by_restaurant):,} in {len(boros_per_nta)} N
 
 # Count restaurants per NTA and grade group: one row per NTA, one column per grade.
 # The page computes the shares, so we store counts only
-GROUP_COLUMNS = {"A": "count_A", "B": "count_B", "C": "count_C", "Pending": "count_pending"}
+GROUP_COLUMNS = dict(zip(CARDS, ["count_A", "count_B", "count_C", "count_grade_pending", "count_not_graded"]))
 nta_counts = (
-    pd.crosstab([by_restaurant["nta"], by_restaurant["boro"]], by_restaurant["grade_group"])
+    pd.crosstab([by_restaurant["nta"], by_restaurant["boro"]], by_restaurant["card"])
         .reindex(columns=list(GROUP_COLUMNS), fill_value=0)  # keep all four columns even if a group is empty
         .rename(columns=GROUP_COLUMNS)
         .rename_axis(columns=None)

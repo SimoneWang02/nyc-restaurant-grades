@@ -13,14 +13,18 @@ A map of New York showing the share of restaurants with an A in each neighborhoo
 - A first inspection with 0 to 13 points gives an A. With 14 or more there is no grade yet, and a re-inspection decides A, B or C.
 - A restaurant that gets a B or C can post "Grade Pending" until its hearing.
 
-Besides A, B and C, the data also has N (not yet graded), Z (grade pending) and P (grade pending after reopening). None of these are actual letter grades yet, so I put them together in one "Pending" group.
+Besides A, B and C, the data also has N (not yet graded), Z (grade pending) and P (grade pending after reopening). None of these are letter grades, so we name them after the card the restaurant posts in its window: N is "Not Yet Graded", and Z and P are both "Grade Pending". Q7 uses the same card names.
+
+<div class="tip">
+  <strong>Grade definition (same as Q4):</strong> a restaurant's grade is the grade of its most recent graded inspection, which is the card it posts now. A later Grade Pending or Not Yet Graded replaces an earlier A, B or C. Restaurants that were never graded are left out.
+</div>
 
 1. Get the `inspections` table, remove rows with no grade and sort by `inspection_date`. Many inspections have no grade because they are not graded at all, for example a first inspection with 14 or more points or an administrative inspection. Removing them only leaves a restaurant out if it has never had a graded inspection
-2. Group by `camis` and keep the last graded inspection, so there is one row per restaurant
-3. Rename N, Z and P to "Pending"
+2. Group by `camis` and keep the last graded inspection, so there is one row per restaurant. This step is shared with Q4 (`current_grades` in `scripts/question-specific/common.py`)
+3. Turn N into "Not Yet Graded", and Z and P into "Grade Pending"
 4. Join with the `restaurants` table on `camis` to get each restaurant's `nta`. Restaurants without an NTA can't be placed on the map, so they are left out of both tables
 5. Get the borough from the first two letters of the NTA code (MN, BX, BK, QN, SI) instead of the `boro` column. The two only disagree for a few restaurants in Marble Hill, which is in Manhattan but has Bronx addresses
-6. Count the restaurants per NTA for each grade group (`count_A`, `count_B`, `count_C`, `count_pending`, `total_count`). The borough table is the sum of its NTAs, so the borough totals match the map. The CSVs only store counts and the shares are calculated on the page
+6. Count the restaurants per NTA for each grade card (`count_A`, `count_B`, `count_C`, `count_grade_pending`, `count_not_graded`, `total_count`). The borough table is the sum of its NTAs, so the borough totals match the map. The CSVs only store counts and the shares are calculated on the page
 
 ```js
 const boroughs = FileAttachment("/data/q2-boro.csv").csv({typed: true});
@@ -33,7 +37,8 @@ const header = {
   count_A: "A",
   count_B: "B",
   count_C: "C",
-  count_pending: "Pending",
+  count_grade_pending: "Grade Pending",
+  count_not_graded: "Not Yet Graded",
   total_count: "Total"
 };
 ```
@@ -60,7 +65,7 @@ A map of New York where each area is colored by the share of its restaurants tha
         <li>The boroughs color-wise look pretty similar because their A-share are close. Lowest is Queens with 75.5% and highest is Manhattan and Bronx with 80.1%.</li>
         <li>Why does each grade have its own color scale? Because the shares are very different. Most restaurants have an A, and only a few have a B or a C. On the A scale, every area would look the same color for B and C.</li>
         <li>The city's inspection data only includes restaurants that are still open. Restaurants that closed are removed together with their grades, so they are not on the map.</li>
-        <li>Pending is not the same as "unknown": most Pending restaurants scored 14 or more at their latest graded inspection. They missed an A and are waiting for a re-inspection or a hearing.</li>
+        <li>Grade Pending and Not Yet Graded are not the same as "unknown", and they are not the same as each other. Not Yet Graded is given at a first inspection, mostly to new restaurants that scored 14 or more and wait for their re-inspection. Grade Pending is given at a re-inspection or a reopening; most of these restaurants scored 14 or more and are contesting their B or C at a hearing.</li>
         <li>Why do the boroughs and the neighborhoods use the same scale? So a color always means the same share. If the borough view had its own scale, small differences between boroughs would look big and the colors would change when you zoom in.</li>
     </ul>
 </div>

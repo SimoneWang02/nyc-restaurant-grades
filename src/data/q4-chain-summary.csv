@@ -1,4 +1,4 @@
-chain,branches,A,B,C,no_grade,pct_A,left_out
-Dunkin,493,481,7,1,4,98.36,135
-Starbucks,271,267,2,0,2,99.26,1
-McDonald's,187,184,2,0,1,98.92,1
+chain,branches,A,B,C,grade_pending,not_graded,never_graded,pct_A,left_out
+Dunkin,493,477,7,1,5,3,0,96.75,135
+Starbucks,271,267,2,0,0,2,0,98.52,1
+McDonald's,187,184,2,0,0,1,0,98.4,1
