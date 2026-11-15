@@ -6,14 +6,18 @@ common.py, the same definition as Q4) and counts the grade cards by NTA and boro
 Run from the repo root: python3 scripts/question-specific/question-2.py
 """
 
+import json
 from pathlib import Path
 
 import pandas as pd
 
-from common import CARDS, current_grades, read
+from common import CARDS, OUT_DIR, current_grades, read, snapshot
 
 NTA_OUT_FILE = Path("src/data/q2-nta.csv")
 BORO_OUT_FILE = Path("src/data/q2-boro.csv")
+SUMMARY_OUT_FILE = OUT_DIR / "q2-summary.json"
+NTA_NAMES_FILE = Path("data/reference/nta-2010.csv")  # from scripts/download-nta-lookup.py
+MIN_RESTAURANTS = 20  # an NTA with fewer restaurants is gray on the map: its shares are too noisy
 
 inspections = read("inspections")
 restaurants = read("restaurants")
@@ -76,13 +80,31 @@ nta_counts = (
 )
 nta_counts["total_count"] = nta_counts[list(GROUP_COLUMNS.values())].sum(axis=1)
 
+# Add every 2010 NTA with its name, so each shape on the map has a row (NTAs without
+# restaurants get zeros)
+nta_names = pd.read_csv(NTA_NAMES_FILE, dtype=str)
+unknown = set(nta_counts["nta"]) - set(nta_names["nta"])
+assert not unknown, f"NTA codes missing from {NTA_NAMES_FILE}: {unknown}"
+nta_counts = nta_names.merge(nta_counts, on="nta", how="left", validate="one_to_one")
+nta_counts["boro"] = nta_counts["boro"].fillna(nta_counts["nta"].str[:2].map(PREFIX_TO_BORO))
+count_columns = list(GROUP_COLUMNS.values()) + ["total_count"]
+nta_counts[count_columns] = nta_counts[count_columns].fillna(0).astype(int)
+
+# Why an NTA is gray on the map instead of colored by its shares (blank if it is colored).
+# Parks and cemeteries come first: their few restaurants are concessions, not a neighborhood
+is_park = nta_counts["nta_name"].str.startswith("park-cemetery-etc")
+too_few = nta_counts["total_count"] < MIN_RESTAURANTS
+nta_counts["gray_reason"] = ""
+nta_counts.loc[too_few, "gray_reason"] = f"fewer than {MIN_RESTAURANTS} restaurants"
+nta_counts.loc[is_park, "gray_reason"] = "park or cemetery"
+print(nta_counts["gray_reason"].replace("", "(colored)").value_counts().to_string())
+
 # Check: every restaurant on the map is counted exactly once
 assert nta_counts["total_count"].sum() == len(by_restaurant), "NTA totals don't add up"
 print(f"NTA table: {len(nta_counts)} rows, {nta_counts['total_count'].sum():,} restaurants")
 print(nta_counts.sort_values("total_count", ascending=False).head())
 
 # Borough table: add up the NTA rows inside each borough, so it matches the map exactly
-count_columns = list(GROUP_COLUMNS.values()) + ["total_count"]
 boro_counts = nta_counts.groupby("boro", as_index=False)[count_columns].sum()
 
 # Check: borough totals add up to the same number of restaurants as the NTA table
@@ -93,3 +115,24 @@ NTA_OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
 nta_counts.sort_values("nta").to_csv(NTA_OUT_FILE, index=False)
 boro_counts.to_csv(BORO_OUT_FILE, index=False)
 print(f"Wrote {NTA_OUT_FILE} ({len(nta_counts)} rows) and {BORO_OUT_FILE} ({len(boro_counts)} rows)")
+
+# Who is on the map and who is left out, for the labels next to the map
+gray = nta_counts["gray_reason"] != ""
+summary = {
+    "snapshot": snapshot(),
+    "restaurants": len(restaurants),
+    "never_graded": restaurants_with_no_grade,
+    "with_grade": int(grade_counts.sum()),
+    "no_nta": int(no_nta.sum()),
+    "on_map": len(by_restaurant),
+    "borough_changed": int(changed.sum()),
+    "ntas": len(nta_counts),
+    "min_restaurants": MIN_RESTAURANTS,
+    "ntas_colored": int((~gray).sum()),
+    "ntas_gray_park": int(is_park.sum()),
+    "ntas_gray_too_few": int((too_few & ~is_park).sum()),
+    "restaurants_in_gray_ntas": int(nta_counts.loc[gray, "total_count"].sum()),
+}
+assert summary["with_grade"] == summary["on_map"] + summary["no_nta"], "restaurants lost on the way"
+SUMMARY_OUT_FILE.write_text(json.dumps(summary, indent=1))
+print(json.dumps(summary, indent=1))

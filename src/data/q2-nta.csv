@@ -1,194 +1,196 @@
-nta,boro,count_A,count_B,count_C,count_grade_pending,count_not_graded,total_count
-BK09,Brooklyn,103,6,0,7,10,126
-BK17,Brooklyn,119,5,1,4,7,136
-BK19,Brooklyn,45,1,2,7,9,64
-BK21,Brooklyn,48,3,2,2,16,71
-BK23,Brooklyn,19,1,1,4,5,30
-BK25,Brooklyn,92,13,0,3,14,122
-BK26,Brooklyn,27,0,1,2,3,33
-BK27,Brooklyn,48,6,0,4,6,64
-BK28,Brooklyn,179,19,3,11,13,225
-BK29,Brooklyn,99,8,0,3,9,119
-BK30,Brooklyn,63,10,2,4,8,87
-BK31,Brooklyn,240,13,6,15,38,312
-BK32,Brooklyn,163,9,2,8,18,200
-BK33,Brooklyn,159,4,2,6,18,189
-BK34,Brooklyn,236,31,6,15,24,312
-BK35,Brooklyn,107,8,3,9,12,139
-BK37,Brooklyn,398,20,10,12,27,467
-BK38,Brooklyn,304,16,4,19,22,365
-BK40,Brooklyn,53,3,1,1,2,60
-BK41,Brooklyn,38,1,4,3,4,50
-BK42,Brooklyn,151,11,4,9,16,191
-BK43,Brooklyn,58,6,2,6,3,75
-BK44,Brooklyn,49,9,4,6,2,70
-BK45,Brooklyn,66,5,4,4,8,87
-BK46,Brooklyn,16,2,2,2,0,22
-BK50,Brooklyn,73,4,3,3,3,86
-BK58,Brooklyn,69,10,0,8,6,93
-BK60,Brooklyn,130,10,6,11,10,167
-BK61,Brooklyn,197,17,3,9,23,249
-BK63,Brooklyn,50,6,1,1,3,61
-BK64,Brooklyn,104,8,1,8,11,132
-BK68,Brooklyn,102,9,3,7,16,137
-BK69,Brooklyn,104,7,0,11,7,129
-BK72,Brooklyn,5,3,0,0,4,12
-BK73,Brooklyn,396,21,8,13,46,484
-BK75,Brooklyn,136,7,5,9,13,170
-BK76,Brooklyn,208,18,4,8,26,264
-BK77,Brooklyn,226,15,11,13,28,293
-BK78,Brooklyn,144,6,2,8,24,184
-BK79,Brooklyn,31,3,1,2,2,39
-BK81,Brooklyn,71,3,4,2,7,87
-BK82,Brooklyn,106,9,0,4,8,127
-BK83,Brooklyn,61,2,2,10,3,78
-BK85,Brooklyn,20,4,0,0,0,24
-BK88,Brooklyn,68,12,2,8,12,102
-BK90,Brooklyn,156,15,4,11,20,206
-BK91,Brooklyn,45,6,3,5,7,66
-BK93,Brooklyn,13,1,0,0,0,14
-BK95,Brooklyn,64,0,1,9,10,84
-BK96,Brooklyn,57,4,1,2,5,69
-BK99,Brooklyn,17,0,0,1,5,23
-BX01,Bronx,27,2,0,0,4,33
-BX03,Bronx,38,3,2,7,2,52
-BX05,Bronx,73,5,1,5,8,92
-BX06,Bronx,105,7,2,4,5,123
-BX07,Bronx,46,2,5,1,3,57
-BX08,Bronx,36,7,2,3,5,53
-BX09,Bronx,30,4,0,0,1,35
-BX10,Bronx,57,4,0,3,5,69
-BX13,Bronx,64,6,0,3,3,76
-BX14,Bronx,44,7,0,3,5,59
-BX17,Bronx,42,3,1,3,1,50
-BX22,Bronx,37,4,0,2,2,45
-BX26,Bronx,25,2,0,1,6,34
-BX27,Bronx,56,2,3,3,6,70
-BX28,Bronx,29,7,0,3,3,42
-BX29,Bronx,88,9,1,3,3,104
-BX30,Bronx,20,4,1,2,4,31
-BX31,Bronx,28,2,2,1,0,33
-BX33,Bronx,30,4,1,3,4,42
-BX34,Bronx,77,1,3,5,9,95
-BX35,Bronx,34,2,4,2,1,43
-BX36,Bronx,42,3,2,0,8,55
-BX37,Bronx,68,3,3,4,9,87
-BX39,Bronx,86,12,5,6,14,123
-BX40,Bronx,43,6,1,3,3,56
-BX41,Bronx,55,7,2,0,3,67
-BX43,Bronx,58,4,2,3,8,75
-BX44,Bronx,60,12,1,2,4,79
-BX46,Bronx,42,5,1,2,1,51
-BX49,Bronx,50,2,1,4,1,58
-BX52,Bronx,79,7,1,2,8,97
-BX55,Bronx,47,2,0,2,1,52
-BX59,Bronx,58,4,0,4,4,70
-BX62,Bronx,55,6,1,5,2,69
-BX63,Bronx,126,10,2,3,6,147
-BX75,Bronx,18,1,0,0,1,20
-BX99,Bronx,17,0,0,0,0,17
-MN01,Manhattan,89,9,4,6,13,121
-MN03,Manhattan,57,4,6,7,9,83
-MN04,Manhattan,76,9,3,3,23,114
-MN06,Manhattan,35,4,1,1,4,45
-MN09,Manhattan,132,17,4,7,10,170
-MN11,Manhattan,75,11,3,3,12,104
-MN12,Manhattan,305,20,5,19,29,378
-MN13,Manhattan,763,51,8,31,64,917
-MN14,Manhattan,166,6,3,5,15,195
-MN15,Manhattan,398,33,12,32,65,540
-MN17,Manhattan,1579,93,25,61,157,1915
-MN19,Manhattan,440,28,9,28,27,532
-MN20,Manhattan,263,19,5,15,27,329
-MN21,Manhattan,186,10,5,15,12,228
-MN22,Manhattan,467,41,16,21,65,610
-MN23,Manhattan,698,45,11,33,77,864
-MN24,Manhattan,583,38,10,25,55,711
-MN25,Manhattan,437,13,4,20,36,510
-MN27,Manhattan,439,44,6,29,61,579
-MN28,Manhattan,122,7,2,12,16,159
-MN31,Manhattan,233,16,6,11,22,288
-MN32,Manhattan,181,14,4,10,14,223
-MN33,Manhattan,99,13,4,2,17,135
-MN34,Manhattan,126,7,3,5,12,153
-MN35,Manhattan,90,12,3,10,22,137
-MN36,Manhattan,132,17,3,7,13,172
-MN40,Manhattan,259,18,6,8,22,313
-MN50,Manhattan,9,2,0,0,0,11
-MN99,Manhattan,11,0,0,0,3,14
-QN01,Queens,21,2,0,2,2,27
-QN02,Queens,19,3,0,0,2,24
-QN03,Queens,14,1,0,5,2,22
-QN05,Queens,28,3,0,1,2,34
-QN06,Queens,40,1,1,0,3,45
-QN07,Queens,21,0,0,4,3,28
-QN08,Queens,49,5,3,3,0,60
-QN10,Queens,46,2,1,1,4,54
-QN12,Queens,38,1,0,2,1,42
-QN15,Queens,30,3,0,4,4,41
-QN17,Queens,166,15,5,18,13,217
-QN18,Queens,57,4,2,0,3,66
-QN19,Queens,50,2,2,1,4,59
-QN20,Queens,204,29,4,7,12,256
-QN21,Queens,40,3,1,6,4,54
-QN22,Queens,330,54,28,48,51,511
-QN23,Queens,39,2,3,2,3,49
-QN25,Queens,50,10,2,3,4,69
-QN26,Queens,125,24,1,5,13,168
-QN27,Queens,26,4,1,3,1,35
-QN28,Queens,236,38,8,28,14,324
-QN29,Queens,194,34,5,21,14,268
-QN30,Queens,56,7,2,4,7,76
-QN31,Queens,356,29,9,19,48,461
-QN33,Queens,15,2,1,1,1,20
-QN34,Queens,55,5,1,7,0,68
-QN35,Queens,46,9,3,5,1,64
-QN37,Queens,34,3,1,3,2,43
-QN38,Queens,36,3,3,1,2,45
-QN41,Queens,40,2,2,5,7,56
-QN42,Queens,37,4,1,1,4,47
-QN43,Queens,29,2,2,3,5,41
-QN44,Queens,39,4,2,3,5,53
-QN45,Queens,52,2,3,4,6,67
-QN46,Queens,132,14,2,8,13,169
-QN47,Queens,40,0,1,2,0,43
-QN48,Queens,32,2,1,2,3,40
-QN49,Queens,56,0,1,1,1,59
-QN50,Queens,46,8,3,5,9,71
-QN51,Queens,127,23,8,18,15,191
-QN52,Queens,28,7,2,2,5,44
-QN53,Queens,81,10,4,4,3,102
-QN54,Queens,93,13,8,10,9,133
-QN55,Queens,129,18,5,14,7,173
-QN56,Queens,43,3,0,2,2,50
-QN57,Queens,48,3,1,3,3,58
-QN60,Queens,36,4,1,1,2,44
-QN61,Queens,151,12,5,13,18,199
-QN62,Queens,17,4,3,4,2,30
-QN63,Queens,103,11,7,13,7,141
-QN66,Queens,31,2,3,3,1,40
-QN68,Queens,74,9,2,3,5,93
-QN70,Queens,319,37,7,28,43,434
-QN71,Queens,66,4,0,2,5,77
-QN72,Queens,127,13,1,8,8,157
-QN76,Queens,39,7,2,0,1,49
-QN98,Queens,55,0,0,0,0,55
-QN99,Queens,8,1,1,0,3,13
-SI01,Staten Island,33,1,0,1,3,38
-SI05,Staten Island,60,4,1,5,11,81
-SI07,Staten Island,64,11,0,2,7,84
-SI08,Staten Island,8,0,0,0,1,9
-SI11,Staten Island,68,5,1,1,9,84
-SI12,Staten Island,30,3,3,1,9,46
-SI14,Staten Island,20,4,0,1,3,28
-SI22,Staten Island,59,7,0,2,11,79
-SI24,Staten Island,68,2,3,2,12,87
-SI25,Staten Island,11,3,0,1,0,15
-SI28,Staten Island,37,5,1,0,5,48
-SI32,Staten Island,17,3,0,0,2,22
-SI35,Staten Island,41,1,1,3,4,50
-SI36,Staten Island,41,3,0,2,1,47
-SI37,Staten Island,49,8,1,2,11,71
-SI45,Staten Island,76,4,1,2,13,96
-SI48,Staten Island,5,1,0,0,0,6
-SI54,Staten Island,73,6,0,3,5,87
+nta,nta_name,boro,count_A,count_B,count_C,count_grade_pending,count_not_graded,total_count,gray_reason
+BK09,Brooklyn Heights-Cobble Hill,Brooklyn,103,6,0,7,10,126,
+BK17,Sheepshead Bay-Gerritsen Beach-Manhattan Beach,Brooklyn,119,5,1,4,7,136,
+BK19,Brighton Beach,Brooklyn,45,1,2,7,9,64,
+BK21,Seagate-Coney Island,Brooklyn,48,3,2,2,16,71,
+BK23,West Brighton,Brooklyn,19,1,1,4,5,30,
+BK25,Homecrest,Brooklyn,92,13,0,3,14,122,
+BK26,Gravesend,Brooklyn,27,0,1,2,3,33,
+BK27,Bath Beach,Brooklyn,48,6,0,4,6,64,
+BK28,Bensonhurst West,Brooklyn,179,19,3,11,13,225,
+BK29,Bensonhurst East,Brooklyn,99,8,0,3,9,119,
+BK30,Dyker Heights,Brooklyn,63,10,2,4,8,87,
+BK31,Bay Ridge,Brooklyn,240,13,6,15,38,312,
+BK32,Sunset Park West,Brooklyn,163,9,2,8,18,200,
+BK33,Carroll Gardens-Columbia Street-Red Hook,Brooklyn,159,4,2,6,18,189,
+BK34,Sunset Park East,Brooklyn,236,31,6,15,24,312,
+BK35,Stuyvesant Heights,Brooklyn,107,8,3,9,12,139,
+BK37,Park Slope-Gowanus,Brooklyn,398,20,10,12,27,467,
+BK38,DUMBO-Vinegar Hill-Downtown Brooklyn-Boerum Hill,Brooklyn,304,16,4,19,22,365,
+BK40,Windsor Terrace,Brooklyn,53,3,1,1,2,60,
+BK41,Kensington-Ocean Parkway,Brooklyn,38,1,4,3,4,50,
+BK42,Flatbush,Brooklyn,151,11,4,9,16,191,
+BK43,Midwood,Brooklyn,58,6,2,6,3,75,
+BK44,Madison,Brooklyn,49,9,4,6,2,70,
+BK45,Georgetown-Marine Park-Bergen Beach-Mill Basin,Brooklyn,66,5,4,4,8,87,
+BK46,Ocean Parkway South,Brooklyn,16,2,2,2,0,22,
+BK50,Canarsie,Brooklyn,73,4,3,3,3,86,
+BK58,Flatlands,Brooklyn,69,10,0,8,6,93,
+BK60,Prospect Lefferts Gardens-Wingate,Brooklyn,130,10,6,11,10,167,
+BK61,Crown Heights North,Brooklyn,197,17,3,9,23,249,
+BK63,Crown Heights South,Brooklyn,50,6,1,1,3,61,
+BK64,Prospect Heights,Brooklyn,104,8,1,8,11,132,
+BK68,Fort Greene,Brooklyn,102,9,3,7,16,137,
+BK69,Clinton Hill,Brooklyn,104,7,0,11,7,129,
+BK72,Williamsburg,Brooklyn,5,3,0,0,4,12,fewer than 20 restaurants
+BK73,North Side-South Side,Brooklyn,396,21,8,13,46,484,
+BK75,Bedford,Brooklyn,136,7,5,9,13,170,
+BK76,Greenpoint,Brooklyn,208,18,4,8,26,264,
+BK77,Bushwick North,Brooklyn,226,15,11,13,28,293,
+BK78,Bushwick South,Brooklyn,144,6,2,8,24,184,
+BK79,Ocean Hill,Brooklyn,31,3,1,2,2,39,
+BK81,Brownsville,Brooklyn,71,3,4,2,7,87,
+BK82,East New York,Brooklyn,106,9,0,4,8,127,
+BK83,Cypress Hills-City Line,Brooklyn,61,2,2,10,3,78,
+BK85,East New York (Pennsylvania Ave),Brooklyn,20,4,0,0,0,24,
+BK88,Borough Park,Brooklyn,68,12,2,8,12,102,
+BK90,East Williamsburg,Brooklyn,156,15,4,11,20,206,
+BK91,East Flatbush-Farragut,Brooklyn,45,6,3,5,7,66,
+BK93,Starrett City,Brooklyn,13,1,0,0,0,14,fewer than 20 restaurants
+BK95,Erasmus,Brooklyn,64,0,1,9,10,84,
+BK96,Rugby-Remsen Village,Brooklyn,57,4,1,2,5,69,
+BK99,park-cemetery-etc-Brooklyn,Brooklyn,17,0,0,1,5,23,park or cemetery
+BX01,Claremont-Bathgate,Bronx,27,2,0,0,4,33,
+BX03,Eastchester-Edenwald-Baychester,Bronx,38,3,2,7,2,52,
+BX05,Bedford Park-Fordham North,Bronx,73,5,1,5,8,92,
+BX06,Belmont,Bronx,105,7,2,4,5,123,
+BX07,Bronxdale,Bronx,46,2,5,1,3,57,
+BX08,West Farms-Bronx River,Bronx,36,7,2,3,5,53,
+BX09,Soundview-Castle Hill-Clason Point-Harding Park,Bronx,30,4,0,0,1,35,
+BX10,Pelham Bay-Country Club-City Island,Bronx,57,4,0,3,5,69,
+BX13,Co-op City,Bronx,64,6,0,3,3,76,
+BX14,East Concourse-Concourse Village,Bronx,44,7,0,3,5,59,
+BX17,East Tremont,Bronx,42,3,1,3,1,50,
+BX22,North Riverdale-Fieldston-Riverdale,Bronx,37,4,0,2,2,45,
+BX26,Highbridge,Bronx,25,2,0,1,6,34,
+BX27,Hunts Point,Bronx,56,2,3,3,6,70,
+BX28,Van Cortlandt Village,Bronx,29,7,0,3,3,42,
+BX29,Spuyten Duyvil-Kingsbridge,Bronx,88,9,1,3,3,104,
+BX30,Kingsbridge Heights,Bronx,20,4,1,2,4,31,
+BX31,Allerton-Pelham Gardens,Bronx,28,2,2,1,0,33,
+BX33,Longwood,Bronx,30,4,1,3,4,42,
+BX34,Melrose South-Mott Haven North,Bronx,77,1,3,5,9,95,
+BX35,Morrisania-Melrose,Bronx,34,2,4,2,1,43,
+BX36,University Heights-Morris Heights,Bronx,42,3,2,0,8,55,
+BX37,Van Nest-Morris Park-Westchester Square,Bronx,68,3,3,4,9,87,
+BX39,Mott Haven-Port Morris,Bronx,86,12,5,6,14,123,
+BX40,Fordham South,Bronx,43,6,1,3,3,56,
+BX41,Mount Hope,Bronx,55,7,2,0,3,67,
+BX43,Norwood,Bronx,58,4,2,3,8,75,
+BX44,Williamsbridge-Olinville,Bronx,60,12,1,2,4,79,
+BX46,Parkchester,Bronx,42,5,1,2,1,51,
+BX49,Pelham Parkway,Bronx,50,2,1,4,1,58,
+BX52,Schuylerville-Throgs Neck-Edgewater Park,Bronx,79,7,1,2,8,97,
+BX55,Soundview-Bruckner,Bronx,47,2,0,2,1,52,
+BX59,Westchester-Unionport,Bronx,58,4,0,4,4,70,
+BX62,Woodlawn-Wakefield,Bronx,55,6,1,5,2,69,
+BX63,West Concourse,Bronx,126,10,2,3,6,147,
+BX75,Crotona Park East,Bronx,18,1,0,0,1,20,
+BX98,Rikers Island,Bronx,0,0,0,0,0,0,fewer than 20 restaurants
+BX99,park-cemetery-etc-Bronx,Bronx,17,0,0,0,0,17,park or cemetery
+MN01,Marble Hill-Inwood,Manhattan,89,9,4,6,13,121,
+MN03,Central Harlem North-Polo Grounds,Manhattan,57,4,6,7,9,83,
+MN04,Hamilton Heights,Manhattan,76,9,3,3,23,114,
+MN06,Manhattanville,Manhattan,35,4,1,1,4,45,
+MN09,Morningside Heights,Manhattan,132,17,4,7,10,170,
+MN11,Central Harlem South,Manhattan,75,11,3,3,12,104,
+MN12,Upper West Side,Manhattan,305,20,5,19,29,378,
+MN13,Hudson Yards-Chelsea-Flatiron-Union Square,Manhattan,763,51,8,31,64,917,
+MN14,Lincoln Square,Manhattan,166,6,3,5,15,195,
+MN15,Clinton,Manhattan,398,33,12,32,65,540,
+MN17,Midtown-Midtown South,Manhattan,1579,93,25,61,157,1915,
+MN19,Turtle Bay-East Midtown,Manhattan,440,28,9,28,27,532,
+MN20,Murray Hill-Kips Bay,Manhattan,263,19,5,15,27,329,
+MN21,Gramercy,Manhattan,186,10,5,15,12,228,
+MN22,East Village,Manhattan,467,41,16,21,65,610,
+MN23,West Village,Manhattan,698,45,11,33,77,864,
+MN24,SoHo-TriBeCa-Civic Center-Little Italy,Manhattan,583,38,10,25,55,711,
+MN25,Battery Park City-Lower Manhattan,Manhattan,437,13,4,20,36,510,
+MN27,Chinatown,Manhattan,439,44,6,29,61,579,
+MN28,Lower East Side,Manhattan,122,7,2,12,16,159,
+MN31,Lenox Hill-Roosevelt Island,Manhattan,233,16,6,11,22,288,
+MN32,Yorkville,Manhattan,181,14,4,10,14,223,
+MN33,East Harlem South,Manhattan,99,13,4,2,17,135,
+MN34,East Harlem North,Manhattan,126,7,3,5,12,153,
+MN35,Washington Heights North,Manhattan,90,12,3,10,22,137,
+MN36,Washington Heights South,Manhattan,132,17,3,7,13,172,
+MN40,Upper East Side-Carnegie Hill,Manhattan,259,18,6,8,22,313,
+MN50,Stuyvesant Town-Cooper Village,Manhattan,9,2,0,0,0,11,fewer than 20 restaurants
+MN99,park-cemetery-etc-Manhattan,Manhattan,11,0,0,0,3,14,park or cemetery
+QN01,South Jamaica,Queens,21,2,0,2,2,27,
+QN02,Springfield Gardens North,Queens,19,3,0,0,2,24,
+QN03,Springfield Gardens South-Brookville,Queens,14,1,0,5,2,22,
+QN05,Rosedale,Queens,28,3,0,1,2,34,
+QN06,Jamaica Estates-Holliswood,Queens,40,1,1,0,3,45,
+QN07,Hollis,Queens,21,0,0,4,3,28,
+QN08,St. Albans,Queens,49,5,3,3,0,60,
+QN10,Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,Queens,46,2,1,1,4,54,
+QN12,Hammels-Arverne-Edgemere,Queens,38,1,0,2,1,42,
+QN15,Far Rockaway-Bayswater,Queens,30,3,0,4,4,41,
+QN17,Forest Hills,Queens,166,15,5,18,13,217,
+QN18,Rego Park,Queens,57,4,2,0,3,66,
+QN19,Glendale,Queens,50,2,2,1,4,59,
+QN20,Ridgewood,Queens,204,29,4,7,12,256,
+QN21,Middle Village,Queens,40,3,1,6,4,54,
+QN22,Flushing,Queens,330,54,28,48,51,511,
+QN23,College Point,Queens,39,2,3,2,3,49,
+QN25,Corona,Queens,50,10,2,3,4,69,
+QN26,North Corona,Queens,125,24,1,5,13,168,
+QN27,East Elmhurst,Queens,26,4,1,3,1,35,
+QN28,Jackson Heights,Queens,236,38,8,28,14,324,
+QN29,Elmhurst,Queens,194,34,5,21,14,268,
+QN30,Maspeth,Queens,56,7,2,4,7,76,
+QN31,Hunters Point-Sunnyside-West Maspeth,Queens,356,29,9,19,48,461,
+QN33,Cambria Heights,Queens,15,2,1,1,1,20,
+QN34,Queens Village,Queens,55,5,1,7,0,68,
+QN35,Briarwood-Jamaica Hills,Queens,46,9,3,5,1,64,
+QN37,Kew Gardens Hills,Queens,34,3,1,3,2,43,
+QN38,Pomonok-Flushing Heights-Hillcrest,Queens,36,3,3,1,2,45,
+QN41,Fresh Meadows-Utopia,Queens,40,2,2,5,7,56,
+QN42,Oakland Gardens,Queens,37,4,1,1,4,47,
+QN43,Bellerose,Queens,29,2,2,3,5,41,
+QN44,Glen Oaks-Floral Park-New Hyde Park,Queens,39,4,2,3,5,53,
+QN45,Douglas Manor-Douglaston-Little Neck,Queens,52,2,3,4,6,67,
+QN46,Bayside-Bayside Hills,Queens,132,14,2,8,13,169,
+QN47,Ft. Totten-Bay Terrace-Clearview,Queens,40,0,1,2,0,43,
+QN48,Auburndale,Queens,32,2,1,2,3,40,
+QN49,Whitestone,Queens,56,0,1,1,1,59,
+QN50,Elmhurst-Maspeth,Queens,46,8,3,5,9,71,
+QN51,Murray Hill,Queens,127,23,8,18,15,191,
+QN52,East Flushing,Queens,28,7,2,2,5,44,
+QN53,Woodhaven,Queens,81,10,4,4,3,102,
+QN54,Richmond Hill,Queens,93,13,8,10,9,133,
+QN55,South Ozone Park,Queens,129,18,5,14,7,173,
+QN56,Ozone Park,Queens,43,3,0,2,2,50,
+QN57,Lindenwood-Howard Beach,Queens,48,3,1,3,3,58,
+QN60,Kew Gardens,Queens,36,4,1,1,2,44,
+QN61,Jamaica,Queens,151,12,5,13,18,199,
+QN62,Queensboro Hill,Queens,17,4,3,4,2,30,
+QN63,Woodside,Queens,103,11,7,13,7,141,
+QN66,Laurelton,Queens,31,2,3,3,1,40,
+QN68,Queensbridge-Ravenswood-Long Island City,Queens,74,9,2,3,5,93,
+QN70,Astoria,Queens,319,37,7,28,43,434,
+QN71,Old Astoria,Queens,66,4,0,2,5,77,
+QN72,Steinway,Queens,127,13,1,8,8,157,
+QN76,Baisley Park,Queens,39,7,2,0,1,49,
+QN98,Airport,Queens,55,0,0,0,0,55,
+QN99,park-cemetery-etc-Queens,Queens,8,1,1,0,3,13,park or cemetery
+SI01,Annadale-Huguenot-Prince's Bay-Eltingville,Staten Island,33,1,0,1,3,38,
+SI05,New Springville-Bloomfield-Travis,Staten Island,60,4,1,5,11,81,
+SI07,Westerleigh,Staten Island,64,11,0,2,7,84,
+SI08,Grymes Hill-Clifton-Fox Hills,Staten Island,8,0,0,0,1,9,fewer than 20 restaurants
+SI11,Charleston-Richmond Valley-Tottenville,Staten Island,68,5,1,1,9,84,
+SI12,Mariner's Harbor-Arlington-Port Ivory-Graniteville,Staten Island,30,3,3,1,9,46,
+SI14,Grasmere-Arrochar-Ft. Wadsworth,Staten Island,20,4,0,1,3,28,
+SI22,West New Brighton-New Brighton-St. George,Staten Island,59,7,0,2,11,79,
+SI24,Todt Hill-Emerson Hill-Heartland Village-Lighthouse Hill,Staten Island,68,2,3,2,12,87,
+SI25,Oakwood-Oakwood Beach,Staten Island,11,3,0,1,0,15,fewer than 20 restaurants
+SI28,Port Richmond,Staten Island,37,5,1,0,5,48,
+SI32,Rossville-Woodrow,Staten Island,17,3,0,0,2,22,
+SI35,New Brighton-Silver Lake,Staten Island,41,1,1,3,4,50,
+SI36,Old Town-Dongan Hills-South Beach,Staten Island,41,3,0,2,1,47,
+SI37,Stapleton-Rosebank,Staten Island,49,8,1,2,11,71,
+SI45,New Dorp-Midland Beach,Staten Island,76,4,1,2,13,96,
+SI48,Arden Heights,Staten Island,5,1,0,0,0,6,fewer than 20 restaurants
+SI54,Great Kills,Staten Island,73,6,0,3,5,87,
+SI99,park-cemetery-etc-Staten Island,Staten Island,0,0,0,0,0,0,park or cemetery

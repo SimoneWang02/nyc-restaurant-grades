@@ -25,7 +25,7 @@ Every New York restaurant posts a letter grade by its door. This project looks a
 
 - **DOHMH New York City Restaurant Inspection Results** (NYC Open Data, `43nn-pn8j`): https://data.cityofnewyork.us/d/43nn-pn8j
   Collected by NYC Health Department inspectors during unannounced inspections. One row per violation per inspection; covers currently active restaurants and about three years of inspections. Updated daily, so we work from a dated snapshot.
-- **2010 Neighborhood Tabulation Areas** (NYC Department of City Planning), used as the base map for Q2.
+- **2010 Neighborhood Tabulation Areas** (NYC Department of City Planning), used as the base map for Q2. The inspection data uses 2010 NTA codes, so the map uses 2010 NTAs too (not the newer 2020 ones). NYC Open Data no longer has the 2010 NTA boundary file, so we build it from DCP's [2010 Census Tracts](https://data.cityofnewyork.us/City-Government/2010-Census-Tracts/bmjq-373p) table: 2010 NTAs are made of whole tracts, and merging the tracts by their `ntacode` gives the NTA shapes (`scripts/download-nta-boundaries.py`, output `src/data/nta-2010.json`).
 
 The raw CSV is large and is not stored in this repo. Download it to `data/raw/` (ignored by git):
 
@@ -88,9 +88,11 @@ Run after `clean.py`. The scripts use pandas (`pip install pandas`).
 python3 scripts/question-specific/question-1.py   # number of first inspections per score
 python3 scripts/question-specific/question-2.py   # current grade per restaurant (shared with Q4), counted by NTA and borough
 python3 scripts/question-specific/question-3.py   # box plot numbers of first-inspection scores per cuisine
+python3 scripts/download-nta-boundaries.py        # 2010 NTA shapes for the Q2 map (needs Node.js, runs mapshaper with npx)
 ```
 
-- Each script writes one or two CSV files to `src/data/` (`q1-*`, `q2-*`, `q3-*`), which the Q1, Q2 and Q3 pages read.
+- Each script writes CSV and JSON files to `src/data/` (`q1-*`, `q2-*`, `q3-*`), which the Q1, Q2 and Q3 pages read.
+- `question-2.py` needs the NTA name list from `scripts/download-nta-lookup.py` (in `data/reference/`). The map shapes only need to be rebuilt if the source changes; `src/data/nta-2010.json` is in the repo.
 - Q1 and Q3 use only first inspections ("Cycle Inspection / Initial Inspection") that have a score.
 - Q3 keeps cuisines with at least 50 first inspections (`MIN_COUNT` in `question-3.py`).
 
