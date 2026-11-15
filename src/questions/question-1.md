@@ -11,11 +11,16 @@ Every violation adds points, and a score of 0 to 13 earns an A. This page shows 
 **Goal:** Get an array of scores, each with their number of matching inspections.
 
 1. Get `inspections` table, which has one row per inspection. The raw file has one row per violation and repeats the score on each of them, so counting raw rows would count an inspection once for every violation. Keep only first inspections by matching the `inspection_type` to "Cycle Inspection / Initial Inspection"
-2. Group inspections by attribute `score` to get the count for each score
-3. Fill in any score that has no inspection associated, this is important because many scores have no count and cause the charts to skip their bars. (e.g. Score 1 has 0 matches)
+2. Keep only first inspections from ${q1.start} to ${q1.end}, the same window as Q5 and Q6. The file keeps about three years, so the ${d3.format(",")(q1.older_left_out)} older first inspections are leftovers rather than a fair sample of their years
+3. Group inspections by attribute `score` to get the count for each score
+4. Fill in any score that has no inspection associated, this is important because many scores have no count and cause the charts to skip their bars. (e.g. Score 1 has 0 matches)
+5. Save the numbers quoted on this page (window, snapshot, counts at 12, 13 and 14) to `q1-summary.json`, so the text updates with the data
+
+**Changes since earlier milestones:** the proposal reported 215 first inspections at 14. Milestone 2 counted one row per inspection over all years and found 4,784 at 13 and 210 at 14. Limiting the inspections to the window above gives ${d3.format(",")(q1.count_13)} at 13 and ${d3.format(",")(q1.count_14)} at 14 in the ${q1.snapshot.match(/\d{4}-\d{2}-\d{2}/)[0]} snapshot.
 
 ```js
 const scores = FileAttachment("/data/q1-scores.csv").csv({typed: true});
+const q1 = FileAttachment("/data/q1-summary.json").json();
 ```
 
 ## Inspections by Score
