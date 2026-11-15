@@ -1,0 +1,15 @@
+{
+ "snapshot": "inspections_2026-11-02.csv",
+ "restaurants": 27445,
+ "never_graded": 0,
+ "with_grade": 27445,
+ "no_nta": 601,
+ "on_map": 26844,
+ "borough_changed": 10,
+ "ntas": 195,
+ "min_restaurants": 20,
+ "ntas_colored": 183,
+ "ntas_gray_park": 5,
+ "ntas_gray_too_few": 7,
+ "restaurants_in_gray_ntas": 134
+}
