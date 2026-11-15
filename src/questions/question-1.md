@@ -57,6 +57,10 @@ A bar chart with x-axis representing the scores from 0 to 157 (apparently one re
 display(scoreHistogram(scores, {width}));
 ```
 
+<div class="warning" label="Made by me">
+  I wrote this chart from scratch myself, as a first D3 version. It is more basic than the one below: it shows every score from 0 to the highest on one axis, so the x-axis labels overlap, and there is no cutoff line yet.
+</div>
+
 ```js
 function scoreHistogram(data, {width}) {
     const margin = 60;
@@ -144,6 +148,10 @@ display(scoreHistogramBrush(scores, {width}));
 - The strip below shows every score up to ${q1.max_score}. Drag across it to choose which scores the top chart shows, or drag the gray box to move along. The y-axis of the top chart adjusts to the scores shown, so the high scores stay readable.
 - The buttons jump back to the cutoff view or to all scores.
 - Hover a bar to see its count and its share of all first inspections.
+
+<div class="warning" label="AI Disclosure">
+  I asked Claude to make this chart as a reference for mine. Claude wrote its code (the overview brush, the cutoff line and labels, the tooltip and the view buttons).
+</div>
 
 ```js
 // Histogram of scores with an overview strip: brushing the strip picks the scores shown above
