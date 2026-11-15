@@ -24,6 +24,11 @@ GRADE_CARD = {"A": "A", "B": "B", "C": "C",
 CARDS = ["A", "B", "C", "Grade Pending", "Not Yet Graded"]
 
 
+def snapshot():
+    # The raw file clean.py used (the newest one), e.g. "inspections_2026-11-02.csv"
+    return sorted(Path("data/raw").glob("inspections_*.csv"))[-1].name
+
+
 def read(name):
     # Keep blanks as "" so missing NTA / grade values are easy to test for
     return pd.read_csv(IN_DIR / f"{name}.csv", dtype=str, keep_default_na=False)

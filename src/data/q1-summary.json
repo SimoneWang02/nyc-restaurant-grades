@@ -1,0 +1,13 @@
+{
+ "snapshot": "inspections_2026-11-02.csv",
+ "start": "2023-01-01",
+ "end": "2026-10-29",
+ "inspections": 45073,
+ "older_left_out": 1647,
+ "no_score_left_out": 0,
+ "count_12": 5543,
+ "count_13": 4677,
+ "count_14": 199,
+ "share_a_range": 0.600248,
+ "max_score": 157
+}
