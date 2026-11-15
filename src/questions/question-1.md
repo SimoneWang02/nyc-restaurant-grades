@@ -50,3 +50,85 @@ A bar chart with x-axis representing the scores from 0 to 157 (apparently one re
         </li>
     </ul>
 </div>
+
+## D3 Chart
+
+```js
+display(scoreHistogram(scores, {width}));
+```
+
+```js
+function scoreHistogram(data, {width}) {
+    const margin = 60;
+
+    const dims = {
+        width: width,
+        height: 500
+    };
+
+    const innerDims = {
+        width: dims.width - 2 * margin,
+        height: dims.height - 2 * margin
+    };
+
+    const chartSvg = d3.create("svg")
+        .attr("width", dims.width)
+        .attr("height", dims.height);
+
+    const chart = chartSvg.append("g")
+        .attr("transform", `translate(${margin}, ${margin})`)
+        .attr("width", innerDims.width)
+        .attr("height", innerDims.height);
+
+    const x = d3.scaleBand()
+        .domain(data.map(d => d.score))
+        .range([0, innerDims.width]);
+
+    const y = d3.scaleLinear()
+        .domain([0, d3.max(data, d => d.count)])
+        .range([innerDims.height, 0]);
+
+    const bars = chart.selectAll("rect")
+        .data(data)
+        .join("rect")
+        .attr("x", d => x(d.score))
+        .attr("y", d => y(d.count))
+        .attr("width", x.bandwidth())
+        .attr("height", d => innerDims.height - y(d.count))
+        .attr("fill", "var(--color-accent)");
+
+    bars.append("title")
+        .text(d => "Score " + d.score + ": " + d3.format(",")(d.count) + " First-Inspections");
+
+    chart.append("g")
+        .attr("transform", `translate(${0}, ${innerDims.height})`)
+        .call(d3.axisBottom(x));
+
+    chart.append("g")
+        .call(d3.axisLeft(y));
+
+    chart.append("text")
+        .attr("x", innerDims.width / 2)
+        .attr("y", innerDims.height + margin - 20)
+        .attr("font-weight", "bold")
+        .attr("text-anchor", "middle")
+        .text("Score");
+
+    chart.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("x", -innerDims.height / 2)
+        .attr("y", -45)
+        .attr("font-weight", "bold")
+        .attr("text-anchor", "middle")
+        .text("Number of First-Inspections");
+    
+    chart.append("text")
+        .attr("x", innerDims.width / 2)
+        .attr("y", -20)
+        .attr("font-weight", "bold")
+        .attr("text-anchor", "middle")
+        .text("Distribution of First-Inspection Scores (" + q1.start.slice(0, 4) + " - " + q1.end.slice(0, 4) + ")");
+
+    return chartSvg.node();
+}
+```
