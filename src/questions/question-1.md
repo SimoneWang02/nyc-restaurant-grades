@@ -463,6 +463,19 @@ function scoreHistogramBrush(data, {width}) {
 }
 ```
 
+## What It Shows
+
+```js
+// Numbers quoted below, computed from the score counts (A: 0 to 13, B: 14 to 27, C: 28 or more)
+const countOf = new Map(scores.map(d => [d.score, d.count]));
+const mostCommon = d3.greatest(scores, d => d.count);
+const shareCRange = d3.sum(scores.filter(d => d.score >= 28), d => d.count) / q1.inspections;
+```
+
+- **Most first inspections are in the A range:** ${d3.format(".0%")(q1.share_a_range)} of the ${d3.format(",")(q1.inspections)} first inspections score 13 or less. The most common score is ${mostCommon.score} (${d3.format(",")(mostCommon.count)} first inspections).
+- **A sharp drop at the cutoff:** ${d3.format(",")(q1.count_13)} first inspections score 13, the last A score, but only ${d3.format(",")(q1.count_14)} score 14, the first score that misses an A: 13 is about ${Math.round(q1.count_13 / q1.count_14)} times as common as 14. After 14 the counts climb back up (15: ${d3.format(",")(countOf.get(15))}, 16: ${d3.format(",")(countOf.get(16))}), so 14 is a dip, not the start of a smooth decline. The data show the drop but not its cause (see the notes under the sketch).
+- **A long tail:** ${d3.format(".0%")(shareCRange)} of first inspections score 28 or more, the C range, and the highest score is ${q1.max_score}. A first inspection that misses an A doesn't get a letter yet: the restaurant is inspected again (Q7 follows what happens next).
+
 <style>
 .q1-chart {
   position: relative;
