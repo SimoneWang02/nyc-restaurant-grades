@@ -1,0 +1,5 @@
+chain,inspections,branches,median_score,pct_missed_a,pct_branches_missed_once
+Dunkin,1396,468,10.0,17.48,40.17
+McDonald's,502,171,9.0,14.74,31.58
+Starbucks,739,258,8.0,10.01,23.64
+All restaurants,45073,22066,13.0,39.98,58.53

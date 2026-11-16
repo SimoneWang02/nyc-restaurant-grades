@@ -7,8 +7,12 @@ Saves one PNG per question and a printable PDF (A4, one chart per page) to ../q4
 outside the repo for now. The sketches go into the report once they are scanned.
 """
 
+
+
 from pathlib import Path
 from textwrap import fill
+
+
 
 import matplotlib
 matplotlib.use("Agg")
@@ -16,17 +20,23 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from matplotlib.backends.backend_pdf import PdfPages
 
+
+
 DATA = Path("src/data")
 OUT_DIR = Path("../q4-q6-figures")
 A4 = (11.69, 8.27)  # landscape, inches
+
+
 
 # The empty top part of each page is for drawing controls
 GRADE_COLORS = {"A": "#4e79a7", "B": "#f28e2b", "C": "#e15759", "Grade Pending": "white", "Not Yet Graded": "white"}
 plt.rcParams.update({"font.size": 11, "axes.spines.top": False, "axes.spines.right": False})
 
 
+
 def read(name):
     return pd.read_csv(DATA / name, keep_default_na=False)
+
 
 
 def q4():
@@ -55,6 +65,7 @@ def q4():
     return fig
 
 
+
 def q5():
     codes = read("q5-code-summary.csv").head(15).iloc[::-1]
     fig, ax = plt.subplots(figsize=A4)
@@ -66,6 +77,7 @@ def q5():
     ax.legend(loc="lower right", frameon=False)
     fig.subplots_adjust(top=.7, bottom=.1, left=.38, right=.95)
     return fig
+
 
 
 def q6():
@@ -83,6 +95,7 @@ def q6():
         ax.text(city + 1, 7.3, f"citywide {city:.0f}%", fontsize=9)
     fig.subplots_adjust(top=.68, bottom=.1, left=.2, right=.97, wspace=.75)
     return fig
+
 
 
 OUT_DIR.mkdir(parents=True, exist_ok=True)
