@@ -26,12 +26,12 @@ Besides A, B and C, the data also has N (not yet graded), Z (grade pending) and 
 5. Get the borough from the first two letters of the NTA code (MN, BX, BK, QN, SI) instead of the `boro` column. The two only disagree for a few restaurants in Marble Hill, which is in Manhattan but has Bronx addresses
 6. Count the restaurants per NTA for each grade card (`count_A`, `count_B`, `count_C`, `count_grade_pending`, `count_not_graded`, `total_count`). The borough table is the sum of its NTAs, so the borough totals match the map. The CSVs only store counts and the shares are calculated on the page
 7. Add every 2010 NTA with its name (`nta_name`, from DCP's 2010 Census Tracts table), so each shape on the map has a row. NTAs without restaurants get zeros
-8. Mark the NTAs that are gray on the map in `gray_reason`: parks and cemeteries, whose few restaurants are concessions rather than a neighborhood, and NTAs with fewer than ${q2.min_restaurants} restaurants, whose shares would be based on too few restaurants to compare
+8. Mark the NTAs that are gray on the map in `gray_reason`: parks, cemeteries and the airports (JFK and LaGuardia), whose restaurants are concessions and food courts rather than a neighborhood, and NTAs with fewer than ${q2.min_restaurants} restaurants, whose shares would be based on too few restaurants to compare
 9. Save who is on the map and who is left out to `q2-summary.json`, so the counts below update with the data
 
 **Map boundaries:** the inspection data uses 2010 NTA codes, so the map uses 2010 NTAs too. NYC Open Data no longer has the 2010 NTA boundary file, so we build it from DCP's [2010 Census Tracts](https://data.cityofnewyork.us/City-Government/2010-Census-Tracts/bmjq-373p) table, the same table the NTA names come from. 2010 NTAs are made of whole tracts, so merging the tracts by NTA code gives the NTA shapes. The outlines are simplified to keep the file small (`scripts/download-nta-boundaries.py`, output `nta-2010.json`).
 
-**Who is on the map:** ${format(q2.with_grade)} restaurants have a grade in the ${q2.snapshot.match(/\d{4}-\d{2}-\d{2}/)[0]} snapshot. ${format(q2.no_nta)} have no NTA and are left out, so the map and both tables count **${format(q2.on_map)} restaurants**. ${q2.ntas_colored} of the ${q2.ntas} NTAs are colored. The other ${q2.ntas_gray_park + q2.ntas_gray_too_few} are gray (${q2.ntas_gray_park} parks and cemeteries, ${q2.ntas_gray_too_few} with fewer than ${q2.min_restaurants} restaurants) and hold ${format(q2.restaurants_in_gray_ntas)} restaurants, which still count in their borough.
+**Who is on the map:** ${format(q2.with_grade)} restaurants have a grade in the ${q2.snapshot.match(/\d{4}-\d{2}-\d{2}/)[0]} snapshot. ${format(q2.no_nta)} have no NTA and are left out, so the map and both tables count **${format(q2.on_map)} restaurants**. ${q2.ntas_colored} of the ${q2.ntas} NTAs are colored. The other ${q2.ntas_gray_park + q2.ntas_gray_airport + q2.ntas_gray_too_few} are gray (${q2.ntas_gray_park} parks and cemeteries, ${q2.ntas_gray_airport} airport, ${q2.ntas_gray_too_few} with fewer than ${q2.min_restaurants} restaurants) and hold ${format(q2.restaurants_in_gray_ntas)} restaurants, which still count in their borough.
 
 ```js
 const boroughs = FileAttachment("/data/q2-boro.csv").csv({typed: true});
@@ -103,7 +103,7 @@ display(gradeMap(ntaShapes, nta, boroughs, {width, grade, minRestaurants: q2.min
 - The radio buttons pick the grade. Darker means a higher share of restaurants with that grade.
 - Each grade has its own color scale, from its lowest to its highest NTA share, and the legend shows the numbers. The boroughs and the neighborhoods use the same scale, so a color means the same share at every zoom level.
 - Click a borough to zoom in to its neighborhoods (NTAs), and click another borough to move there. Click the button or the water to go back to all boroughs.
-- Hover an area to see its share and counts. Gray areas are parks and cemeteries, or NTAs with fewer than ${q2.min_restaurants} restaurants.
+- Hover an area to see its share and counts. Gray areas are parks, cemeteries and the airports, or NTAs with fewer than ${q2.min_restaurants} restaurants.
 
 <div class="warning" label="AI Disclosure">
   I asked Claude to make this map. Claude wrote its code (the borough zoom, the color scales and legend, the tooltip and the grade buttons). Claude also built the 2010 NTA boundary file and the gray-area and summary columns in the data processing.
@@ -177,7 +177,7 @@ function gradeMap(topology, ntaRows, boroughRows, {width, grade, minRestaurants}
         .attr("class", "q2-swatch");
 
     grayKey.append("span")
-        .text("Gray: park or cemetery, or fewer than " + minRestaurants + " restaurants");
+        .text("Gray: park, cemetery or airport, or fewer than " + minRestaurants + " restaurants");
 
     const backButton = controls.append("button")
         .attr("type", "button")

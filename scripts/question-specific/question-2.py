@@ -91,12 +91,16 @@ count_columns = list(GROUP_COLUMNS.values()) + ["total_count"]
 nta_counts[count_columns] = nta_counts[count_columns].fillna(0).astype(int)
 
 # Why an NTA is gray on the map instead of colored by its shares (blank if it is colored).
-# Parks and cemeteries come first: their few restaurants are concessions, not a neighborhood
+# Parks, cemeteries and the airports (JFK and LaGuardia) come first: their restaurants are
+# concessions and airport food courts, not a neighborhood
 is_park = nta_counts["nta_name"].str.startswith("park-cemetery-etc")
+is_airport = nta_counts["nta_name"] == "Airport"
 too_few = nta_counts["total_count"] < MIN_RESTAURANTS
 nta_counts["gray_reason"] = ""
 nta_counts.loc[too_few, "gray_reason"] = f"fewer than {MIN_RESTAURANTS} restaurants"
+nta_counts.loc[is_airport, "gray_reason"] = "airport"
 nta_counts.loc[is_park, "gray_reason"] = "park or cemetery"
+assert is_airport.sum() == 1, "the Airport NTA is missing or renamed"
 print(nta_counts["gray_reason"].replace("", "(colored)").value_counts().to_string())
 
 # Check: every restaurant on the map is counted exactly once
@@ -130,7 +134,8 @@ summary = {
     "min_restaurants": MIN_RESTAURANTS,
     "ntas_colored": int((~gray).sum()),
     "ntas_gray_park": int(is_park.sum()),
-    "ntas_gray_too_few": int((too_few & ~is_park).sum()),
+    "ntas_gray_airport": int(is_airport.sum()),
+    "ntas_gray_too_few": int((too_few & ~is_park & ~is_airport).sum()),
     "restaurants_in_gray_ntas": int(nta_counts.loc[gray, "total_count"].sum()),
 }
 assert summary["with_grade"] == summary["on_map"] + summary["no_nta"], "restaurants lost on the way"
