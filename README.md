@@ -93,7 +93,7 @@ python3 scripts/download-nta-boundaries.py        # 2010 NTA shapes for the Q2 m
 
 - Each script writes CSV and JSON files to `src/data/` (`q1-*`, `q2-*`, `q3-*`), which the Q1, Q2 and Q3 pages read.
 - `question-2.py` needs the NTA name list from `scripts/download-nta-lookup.py` (in `data/reference/`). The map shapes only need to be rebuilt if the source changes; `src/data/nta-2010.json` is in the repo.
-- Q1 and Q3 use only first inspections ("Cycle Inspection / Initial Inspection") that have a score.
+- Q1 and Q3 use only first inspections ("Cycle Inspection / Initial Inspection") that have a score, from 2023-01-01 to 2026-10-29 (the same window as Q5 and Q6, set in `scripts/question-specific/common.py`).
 - Q3 keeps cuisines with at least 50 first inspections (`MIN_COUNT` in `question-3.py`).
 
 ### Q4-Q6 (Yiyang)

@@ -338,6 +338,22 @@ function gradeMap(topology, ntaRows, boroughRows, {width, grade, minRestaurants}
 }
 ```
 
+## What It Shows
+
+```js
+// Numbers quoted below, computed from the borough and NTA tables
+const boroughsByA = d3.sort(boroughs, d => d.count_A / d.total_count);
+const coloredByA = d3.sort(nta.filter(d => !d.gray_reason), d => d.count_A / d.total_count);
+const shareA = row => row.count_A / row.total_count;
+const shareC = row => row.count_C / row.total_count;
+const percent = d3.format(".1%");
+```
+
+- **The boroughs are close:** the share of restaurants with an A goes from ${percent(shareA(boroughsByA[0]))} in ${boroughsByA[0].boro} to ${percent(shareA(boroughsByA.at(-1)))} in ${boroughsByA.at(-1).boro}.
+- **Neighborhoods vary more:** among the ${q2.ntas_colored} colored NTAs, the middle half have between ${percent(d3.quantile(coloredByA, 0.25, shareA))} and ${percent(d3.quantile(coloredByA, 0.75, shareA))} A. The lowest is ${coloredByA[0].nta_name} (${percent(shareA(coloredByA[0]))} of ${coloredByA[0].total_count} restaurants) and the highest is ${coloredByA.at(-1).nta_name} (${percent(shareA(coloredByA.at(-1)))} of ${coloredByA.at(-1).total_count}). Many of the extremes have only a few dozen restaurants, where a few restaurants move the share a lot.
+- **C is rare everywhere:** between ${percent(d3.min(boroughs, shareC))} and ${percent(d3.max(boroughs, shareC))} of the restaurants in each borough post a C. Most restaurants without an A post a B, Grade Pending or Not Yet Graded.
+- **Where, not why:** the map shows where grades differ, not what causes it. Neighborhoods also differ in their mix of cuisines (Q3) and kinds of restaurants, and a current grade can come from an inspection months or years ago.
+
 <style>
 .q2-map {
   position: relative;

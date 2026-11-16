@@ -1,0 +1,16 @@
+{
+ "snapshot": "inspections_2026-11-02.csv",
+ "start": "2023-01-01",
+ "end": "2026-10-29",
+ "min_count": 50,
+ "inspections_in_window": 45073,
+ "no_cuisine_left_out": 0,
+ "not_cuisine_left_out": 401,
+ "small_cuisines": 30,
+ "small_cuisines_left_out": 521,
+ "cuisines": 57,
+ "inspections": 44151,
+ "restaurants": 21514,
+ "outliers": 2242,
+ "share_outliers": 0.05078
+}
