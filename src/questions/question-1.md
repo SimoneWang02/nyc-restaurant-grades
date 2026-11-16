@@ -527,13 +527,17 @@ const shareCRange = d3.sum(scores.filter(d => d.score >= 28), d => d.count) / q1
 .q1-grid line {
   stroke: var(--theme-foreground-faintest);
 }
+/* red A cutoff, the same as on the Q3 page */
 .q1-cutoff line {
-  stroke: var(--theme-foreground);
-  stroke-width: 1.5;
-  stroke-dasharray: 4 3;
+  stroke: #d32f2f;
+  stroke-width: 2;
+  stroke-dasharray: 6 4;
 }
 .q1-cutoff text {
   fill: var(--theme-foreground);
+}
+.q1-cutoff text:first-of-type {
+  fill: #d32f2f;
 }
 .q1-axis-title {
   fill: var(--theme-foreground-muted);
