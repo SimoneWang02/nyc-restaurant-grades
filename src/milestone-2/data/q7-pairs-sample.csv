@@ -1,0 +1,11 @@
+camis,first_date,first_score,reinspection_date,reinspection_score,grade_after_reinspection,days_to_reinspection,outcome
+40385584,2026-01-10,18,2026-07-31,13,A,202,A at re-inspection
+50011694,2024-07-01,19,2025-05-08,12,A,311,A at re-inspection
+50004619,2024-05-31,16,2024-07-09,20,B,39,B range at re-inspection
+50044289,2025-10-15,21,2025-12-01,21,B,47,B range at re-inspection
+50011427,2025-03-10,24,2025-08-18,30,C,161,C range at re-inspection
+50048053,2025-08-14,41,2025-10-29,46,C,76,C range at re-inspection
+50138985,2026-03-12,22,,,,,Awaiting re-inspection
+50127120,2026-09-28,60,,,,,Awaiting re-inspection
+50135092,2024-03-04,37,,,,,No re-inspection on file
+50126226,2025-04-17,41,,,,,No re-inspection on file

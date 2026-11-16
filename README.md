@@ -73,6 +73,7 @@ observablehq.config.js          site title, sidebar order and stylesheet
 src/custom-style.css            site-wide CSS (Framework defaults plus our tweaks)
 src/index.md                    home page
 src/questions/question-N.md     one page per question (1 to 8)
+src/milestone-2/                Milestone 2 versions of pages that changed later, with their data (Q7, Q8)
 src/markdown-cheatsheet.md      Markdown and Framework syntax reference (temporary)
 Milestone1_Proposal.pdf         Milestone 1 proposal
 feedbacks/                      Milestone 1 and 2 feedback from the instructors
@@ -120,15 +121,17 @@ python3 scripts/question-specific/plot-q4-q6.py       # base charts for the Mile
 
 ### Q7-Q8 (Yabo Wang)
 
-Run after `clean.py`. The scripts use pandas and numpy.
+Run after `clean.py`. Q7 and Q8 use the October 30, 2026 download (`inspections_2026-10-30.csv`). Its first inspections from 2023-01-01 to 2026-10-29 match the November 2 snapshot used by Q1 (9,877 scoring 14–27, 8,141 scoring 28+, 1,647 before 2023), and both end on 2026-10-29. A newer download gives slightly different counts. The scripts use pandas and numpy; `question-7.py` also imports the grade-card names from `common.py`.
 
 ```bash
 python3 scripts/question-specific/question-7.py   # pairs each first inspection with its re-inspection
 python3 scripts/question-specific/question-8.py   # follows each closure to its reopening
 ```
 
-- Both write small CSV and JSON files to `src/data/` (`q7-*`, `q8-*`), which the Q7 and Q8 pages read.
-- Q7 and Q8 use all routine initial inspections in the snapshot, so their shares of first inspections differ slightly from Q5 and Q6, which start on 2023-01-01.
+- Both write small CSV and JSON files to `src/data/` (`q7-*`, `q8-*`), which the Q7 and Q8 pages read. These files are committed, so the pages work without rerunning the scripts. Each summary file records the snapshot (the raw file's name) and the window.
+- Follow-up ends at the latest inspection date in the snapshot (2026-10-29) for both questions. When a re-inspection or a reopening is missing, the label names the rule that applies (for example "no re-inspection on file, first inspection within 365 days of the end of follow-up"), not the restaurant's real status.
+- Q7 and Q8 use the same window as Q1, Q3, Q5 and Q6: first inspections (Q7) and closures (Q8) from 2023-01-01 to 2026-10-29 (`START` and `END` in `common.py`). Each page states its window next to the charts.
+- The Milestone 2 versions of both pages and their data are kept unchanged in `src/milestone-2/` (on the site: `/milestone-2/question-7` and `/milestone-2/question-8`).
 
 ## AI Disclosure
 
@@ -144,4 +147,8 @@ For milestone 3, I used ChatGPT to polish the text for description sentences(for
 
 ### Yabo Wang
 
-Used Claude to write Python scripts, verify how Q7 pairs first inspections with re-inspections and how Q8 matches closures to reopenings, and polish the text of the Q7 and Q8 pages.
+**Milestone 2 (as submitted):** Used Claude to write Python scripts, verify how Q7 pairs first inspections with re-inspections and how Q8 matches closures to reopenings, and polish the text of the Q7 and Q8 pages.
+
+*Added in Milestone 3:* I wrote most of the Matplotlib code for the Q7 and Q8 sketches myself, following the charts planned in our proposal.
+
+**Milestone 3:** I wrote the first drafts of the Q7 and Q8 pages with working D3 charts (Q7: band selector, two recovery shares, score histogram; Q8: days-closed histogram, violations at closures), ran the scripts on the data, checked the results and decided what to keep; the final pages keep my band selection, the two recovery shares and both Q8 charts. I used Claude (Opus 5.5) to rewrite and extend the charts, update the data scripts for the M2 feedback and edit the text.
