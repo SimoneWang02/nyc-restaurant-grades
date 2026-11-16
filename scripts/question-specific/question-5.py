@@ -5,11 +5,19 @@ Run from the repo root: python3 scripts/question-specific/question-5.py
 Writes src/data/q5-*.csv and q5-summary.json
 """
 
+
+
 import json
+
+
 
 import pandas as pd
 
+
+
 from common import OUT_DIR, load_q5_q6, save
+
+
 
 # Short names for the chart. The official descriptions are often two or three sentences
 SHORT_LABELS = {
@@ -35,7 +43,11 @@ SHORT_LABELS = {
 }
 FLAGS = ["Critical", "Not Critical", "Other"]
 
+
+
 visits, cited, info = load_q5_q6()
+
+
 
 # 1. Count citations per code, split by the critical flag on each row.
 # Most codes always have the same flag, but a few (e.g. 09A) have both
@@ -49,9 +61,22 @@ codes = pd.DataFrame({
 })
 codes["citations"] = codes[["critical", "not_critical", "other_flag"]].sum(axis=1)
 
+
+
 # 2. Share of inspections with the code. Each code appears at most once per inspection,
 # so citations = inspections with that code. The denominator includes clean inspections
 codes["pct_inspections"] = (100 * codes["citations"] / info["inspections"]).round(2)
+
+
+
+# Share of the inspections with the code that missed an A (more than 13 points).
+# One inspection has many codes, so we can't tell how many points one code adds
+visits["missed_a"] = visits["score"].astype(int) > 13
+missed = cited.merge(visits[["inspection_id", "missed_a"]], on="inspection_id").groupby("violation_code")["missed_a"].mean()
+codes["pct_missed_a"] = codes["code"].map(100 * missed).round(2)
+info["pct_missed_a"] = round(100 * visits["missed_a"].mean(), 2)
+
+
 
 # 3. Labels: our short name, plus the most common official wording for the hover text
 wording = cited.value_counts(["violation_code", "violation_description"]).reset_index()
@@ -59,16 +84,24 @@ description = wording.drop_duplicates("violation_code").set_index("violation_cod
 codes["description"] = codes["code"].map(description)
 codes["label"] = [SHORT_LABELS.get(c, d.split(".")[0]) for c, d in zip(codes["code"], codes["description"])]
 
+
+
 codes = codes.sort_values(["citations", "code"], ascending=[False, True]).reset_index(drop=True)
-codes = codes[["code", "label", "citations", "critical", "not_critical", "other_flag", "pct_inspections", "description"]]
+codes = codes[["code", "label", "citations", "critical", "not_critical", "other_flag", "pct_inspections", "pct_missed_a", "description"]]
+
+
 
 # 4. Critical share over all citations
 flags = flag.value_counts().reindex(FLAGS, fill_value=0).rename_axis("flag").reset_index(name="citations")
 flags["pct_citations"] = (100 * flags["citations"] / len(cited)).round(2)
 print(flags)
 
+
+
 # 5. Sample for the report: the 8 most cited codes, 09A (mixed flags) and the rarest code
 sample = codes[(codes.index < 8) | (codes["code"] == "09A") | (codes.index == len(codes) - 1)]
+
+
 
 save(codes, "q5-code-summary.csv")
 save(flags, "q5-critical-summary.csv")

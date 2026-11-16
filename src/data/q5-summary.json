@@ -7,5 +7,6 @@
   "violation_rows": 152142,
   "duplicates_dropped": 137,
   "citations": 152005,
+  "pct_missed_a": 39.98,
   "codes": 67
 }

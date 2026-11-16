@@ -7,11 +7,19 @@ Finds Dunkin, Starbucks and McDonald's branches by name, takes each branch's cur
 Writes src/data/q4-*.csv
 """
 
+
+
 import re
+
+
 
 import pandas as pd
 
-from common import CARDS, current_grades, read, save
+
+
+from common import CARDS, END, FIRST_INSPECTION, START, current_grades, read, save
+
+
 
 BRANDS = {"Dunkin": r"DUNKIN", "Starbucks": r"STARBUCKS", "McDonald's": r"MC\s*DONALD"}
 # A branch's name starts with the brand ("DUNKIN'", not "THE JUICE HOUSE NEAR DUNKIN")
@@ -20,9 +28,13 @@ STARTS_WITH = {"Dunkin": r"^DUNKIN\b", "Starbucks": r"^STARBUCKS\b", "McDonald's
 OTHER_BRANDS = r"BASKIN|JIMMY JOHN|POPEYES|PIZZA HUT|SHAKE SHACK|CIBO|ALIDORO|MAMA MIA|PRIME RIB|NATHANS?|PIZZA PUB"
 NOT_THE_CHAIN = {"50181887", "40395525"}  # Juice House near Dunkin, McDonald Avenue Diner
 
+
+
 restaurants = read("restaurants")
 inspections = read("inspections")
 decisions = pd.read_csv("data/manual/q4-name-decisions.csv", dtype=str, keep_default_na=False)
+
+
 
 # 1. Find restaurants whose name mentions one of the brands
 # (some names use a curly ’ instead of ', e.g. DUNKIN’)
@@ -30,6 +42,7 @@ restaurants["name"] = restaurants["dba"].str.upper().str.replace("’", "'").str
 restaurants["brands"] = restaurants["name"].apply(lambda n: [b for b, p in BRANDS.items() if re.search(p, n)])
 chains = restaurants[restaurants["brands"].str.len() > 0].copy()
 chains["chain"] = chains["brands"].str.join(" | ")
+
 
 
 # 2. Decide which matches count as a branch of that chain
@@ -46,9 +59,12 @@ def match(row):
     return "brand not first"
 
 
+
 chains["match"] = chains.apply(match, axis=1)
 chains["in_sample"] = chains["match"] == "branch"
 chains["note"] = ""
+
+
 
 # The 12 "check by hand" records were looked up one by one (data/manual/q4-name-decisions.csv)
 checked = chains.merge(decisions, on="camis", how="inner", suffixes=("", "_checked"))
@@ -58,12 +74,16 @@ chains.loc[is_checked, "match"] = "checked by hand"
 chains.loc[is_checked, "in_sample"] = chains.loc[is_checked, "camis"].map(decisions.set_index("camis")["in_sample"].eq("true"))
 chains.loc[is_checked, "note"] = chains.loc[is_checked, "camis"].map(decisions.set_index("camis")["reason"])
 
+
+
 # 3. Current grade of each branch: the grade of its most recent graded inspection, so a later
 # N, Z or P replaces an earlier A, B or C. latest_letter keeps that earlier letter for the details
 chain_inspections = inspections[inspections["camis"].isin(chains["camis"])]
 current = current_grades(chain_inspections).set_index("camis")
 for col in ["grade", "card", "grade_date", "latest_letter", "latest_letter_date"]:
     chains[col] = chains["camis"].map(current[col]).fillna("")
+
+
 
 # Grade(s) recorded at the most recent inspection, whatever they are (blank if it wasn't graded)
 last_date = chain_inspections.groupby("camis")["inspection_date"].max()
@@ -72,10 +92,16 @@ on_last = on_last[["camis", "grade"]].replace({"grade": {"": "(missing)"}})
 on_last = on_last.drop_duplicates().sort_values(["camis", "grade"])
 last_status = on_last.groupby("camis")["grade"].agg(" | ".join)
 
+
+
 chains["last_inspection"] = chains["camis"].map(last_date)
 chains["last_status"] = chains["camis"].map(last_status)
 
+
+
 chains["in_sample"] = chains["in_sample"].astype(bool)
+
+
 
 # Dunkin, Starbucks, McDonald's, then the two-brand names
 chains["order"] = chains["chain"].map({brand: i for i, brand in enumerate(BRANDS)}).fillna(len(BRANDS))
@@ -83,6 +109,8 @@ chains = chains.sort_values(["order", "dba", "camis"])
 branches = chains[["chain", "camis", "dba", "boro", "match", "in_sample", "note",
                    "card", "grade", "grade_date", "latest_letter", "latest_letter_date",
                    "last_inspection", "last_status"]]
+
+
 
 # 4. Count the cards per chain. Like Q2, the A share is out of the branches that have a grade
 # (A, B, C, Grade Pending or Not Yet Graded); branches never graded are counted on their own
@@ -106,6 +134,8 @@ for brand in BRANDS:
 summary = pd.DataFrame(rows)
 print(summary)
 
+
+
 # 5. Sample for the report: one branch per card (and one never graded) for each chain
 picks = []
 for brand in BRANDS:
@@ -113,6 +143,38 @@ for brand in BRANDS:
     for card in CARDS + [""]:
         picks += list(sample[sample["card"] == card].index[:1])
 
+
+
+# 6. First inspection scores, same inspections and time window as Q1, Q5 and Q6.
+# The card on the door can come after a re-inspection, the first score shows how the visit went
+first = inspections[(inspections["inspection_type"] == FIRST_INSPECTION) & inspections["inspection_date"].between(START, END)].copy()
+first["score"] = first["score"].astype(int)
+scores = first.merge(branches[branches["in_sample"]][["chain", "camis", "dba", "boro"]], on="camis")
+scores = scores[["chain", "camis", "dba", "boro", "inspection_date", "score"]].sort_values(["chain", "camis", "inspection_date"])
+
+
+
+# one row per chain, plus the whole city to compare with
+groups = list(scores.groupby("chain", sort=False))
+groups.append(("All restaurants", first))
+score_rows = []
+for name, group in groups:
+    score_rows.append({
+        "chain": name,
+        "inspections": len(group),
+        "branches": group["camis"].nunique(),
+        "median_score": group["score"].median(),
+        "pct_missed_a": round(100 * (group["score"] > 13).mean(), 2),
+        # branches with at least one first inspection over 13 points
+        "pct_branches_missed_once": round(100 * group.groupby("camis")["score"].max().gt(13).mean(), 2),
+    })
+score_summary = pd.DataFrame(score_rows)
+print(score_summary)
+
+
+
 save(branches, "q4-branches.csv")
 save(summary, "q4-chain-summary.csv")
 save(branches.loc[picks], "q4-table-sample.csv")
+save(scores, "q4-scores.csv")
+save(score_summary, "q4-score-summary.csv")
