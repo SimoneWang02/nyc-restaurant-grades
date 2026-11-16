@@ -140,4 +140,8 @@ I used ChatGPT to get suggestions on optimizing the project's directory structur
 
 ### Yabo Wang
 
-Used Claude to write Python scripts, verify how Q7 pairs first inspections with re-inspections and how Q8 matches closures to reopenings, and polish the text of the Q7 and Q8 pages.
+**Milestone 2 (as submitted):** Used Claude to write Python scripts, verify how Q7 pairs first inspections with re-inspections and how Q8 matches closures to reopenings, and polish the text of the Q7 and Q8 pages.
+
+*Added in Milestone 3:* I wrote most of the Matplotlib code for the Q7 and Q8 sketches myself, following the charts planned in our proposal.
+
+**Milestone 3:** I wrote the first drafts of the Q7 and Q8 pages with working D3 charts (Q7: band selector, two recovery shares, score histogram; Q8: days-closed histogram, violations at closures), ran the scripts on the data, checked the results and decided what to keep; the final pages keep my band selection, the two recovery shares and both Q8 charts. I used Claude (Opus 5.5) to rewrite and extend the charts, update the data scripts for the M2 feedback and edit the text.

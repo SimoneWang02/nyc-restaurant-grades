@@ -48,6 +48,10 @@ display(violationsChart(violations, q8, {top: topN, width}));
 
 Bar: share of closing inspections that cite the code. Black tick: share of routine first inspections that cite it, for comparison. Codes are sorted by how many closing inspections cite them. Hover a row for the full description.
 
+<div class="warning" label="AI Disclosure">
+  I drafted this page and its first D3 charts, then used Claude to rewrite and extend them (the closure-outcome bar, the failed-attempt split and the comparison with first inspections), update the data script and edit the text. See the README.
+</div>
+
 ## What it shows
 
 ```js

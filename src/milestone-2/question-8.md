@@ -2,7 +2,11 @@
 title: Milestone 2 · 8. Closures and reopening
 ---
 
-<div class="note" label="Milestone 2 record">This is the Q8 page as submitted for Milestone 2 (data analysis and sketches), kept unchanged except for its title, this note and its data paths, which point to a copy of the Milestone 2 data in <code>src/milestone-2/data/</code> so later script changes don't alter it. The current version, with the D3 charts, is <a href="../questions/question-8">here</a>.</div>
+<div class="note" label="Milestone 2 record">This is the Q8 page as submitted for Milestone 2 (data analysis and sketches), kept unchanged except for its title, the two notes at the top and its data paths, which point to a copy of the Milestone 2 data in <code>src/milestone-2/data/</code> so later script changes don't alter it. The current version, with the D3 charts, is <a href="../questions/question-8">here</a>.</div>
+
+<div class="warning" label="AI Disclosure">
+  Added in Milestone 3: I wrote most of the Matplotlib code for this sketch myself, following the charts planned in our proposal. For Milestone 2, I used Claude to write the data script, check how closures are matched to reopenings and polish the text.
+</div>
 
 # Which restaurants get closed, and how long does it take them to reopen?
 

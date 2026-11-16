@@ -46,6 +46,10 @@ display(waitHistogram(days, q7, {band, width}));
 
 Re-inspections in 30-day bins, as a share of the selected group's re-inspections so both bands use the same axis; the title gives the count. The dashed line marks 30 days, the city guide's "typically within a month". The dotted line marks the selected group's median. Hover a bar for its count.
 
+<div class="warning" label="AI Disclosure">
+  I drafted this page and its first D3 charts, then used Claude to rewrite them into the linked recovery flow and the wait-time histogram, update the data script and edit the text. See the README.
+</div>
+
 ## What it shows
 
 ```js
