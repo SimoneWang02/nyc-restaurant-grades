@@ -1,13 +1,15 @@
 first_band,outcome,count,share_of_band
-0-13,A at first inspection,28111,0.99968
-0-13,Closed at first inspection,9,0.00032
-14-27,A at re-inspection,5331,0.52188
-14-27,B range at re-inspection,1753,0.17161
-14-27,C range at re-inspection,850,0.083211
-14-27,Awaiting re-inspection,1802,0.176407
-14-27,No re-inspection on file,479,0.046892
-28+,A at re-inspection,3540,0.422182
-28+,B range at re-inspection,1642,0.195826
-28+,C range at re-inspection,1007,0.120095
-28+,Awaiting re-inspection,1614,0.192487
-28+,No re-inspection on file,582,0.06941
+0-13,A at first inspection,27050,0.999815
+0-13,Closed at first inspection,5,0.000185
+14-27,A at re-inspection,5126,0.518983
+14-27,B range at re-inspection,1686,0.1707
+14-27,C range at re-inspection,824,0.083426
+14-27,"Next cycle began, no re-inspection on file",297,0.03007
+14-27,"No re-inspection on file, first inspection within 365 days of the end of follow-up",1798,0.182039
+14-27,"No re-inspection on file, first inspection more than 365 days before the end of follow-up",146,0.014782
+28+,A at re-inspection,3415,0.419482
+28+,B range at re-inspection,1598,0.19629
+28+,C range at re-inspection,981,0.120501
+28+,"Next cycle began, no re-inspection on file",478,0.058715
+28+,"No re-inspection on file, first inspection within 365 days of the end of follow-up",1555,0.191008
+28+,"No re-inspection on file, first inspection more than 365 days before the end of follow-up",114,0.014003

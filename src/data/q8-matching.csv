@@ -1,6 +1,6 @@
 status,closures,restaurants,share
-Reopened,1237,1162,0.854872
-No reopening record (closed over 30 days before the data pull),140,140,0.096752
-Closed again before a reopening record,53,52,0.036628
-Still closed at the data pull (closed in the last 30 days),11,11,0.007602
-Inspected again without a reopening record,6,6,0.004147
+Reopened,1204,1134,0.863702
+No reopening on file (closed over 30 days before the end of follow-up),122,122,0.087518
+Closed again before a reopening record,52,51,0.037303
+"Recent closure, no reopening on file (last 30 days)",11,11,0.007891
+Inspected again without a reopening record,5,5,0.003587
