@@ -1,0 +1,19 @@
+{
+ "last_inspection_date": "2026-10-29",
+ "n_closures": 1447,
+ "n_restaurants": 1311,
+ "n_reopened": 1237,
+ "share_reopened": 0.854872,
+ "median_days_closed": 6.0,
+ "p25_days_closed": 3.0,
+ "p75_days_closed": 10.0,
+ "share_with_failed_reopening": 0.254319,
+ "top_code": "08A",
+ "top_code_description": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests",
+ "top_code_share": 0.778162,
+ "top_code_first_share": 0.303296,
+ "n_jan_sample": 13,
+ "n_jan_sample_reopened": 13,
+ "reopened_without_closure": 48,
+ "reclosed_without_closure": 6
+}
