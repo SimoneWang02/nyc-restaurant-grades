@@ -106,7 +106,7 @@ display(gradeMap(ntaShapes, nta, boroughs, {width, grade, minRestaurants: q2.min
 - Hover an area to see its share and counts. Gray areas are parks, cemeteries and the airports, or NTAs with fewer than ${q2.min_restaurants} restaurants.
 
 <div class="warning" label="AI Disclosure">
-  I asked Claude to make this map. Claude wrote its code (the borough zoom, the color scales and legend, the tooltip and the grade buttons). Claude also built the 2010 NTA boundary file and the gray-area and summary columns in the data processing.
+  I asked Claude (Opus 5.5) to make this map. Claude wrote its code (the borough zoom, the color scales and legend, the tooltip and the grade buttons). Claude also built the 2010 NTA boundary file and the gray-area and summary columns in the data processing.
 </div>
 
 ```js

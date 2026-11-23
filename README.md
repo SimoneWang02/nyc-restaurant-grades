@@ -137,7 +137,9 @@ python3 scripts/question-specific/question-8.py   # follows each closure to its 
 
 ### Simone Wang
 
-Used Claude to help polish writing, find background sources, scaffold and check code, write python scripts and set up the GitHub Pages deployment.
+**Milestone 2 (as submitted):** Used Claude (Opus 5.5) to help set up the Observable Framework site and the GitHub Pages deployment, scaffold and check the download, cleaning and Q1–Q3 scripts, find background sources, and polish the writing.
+
+**Milestone 3:** I fixed the data time window and the grade grouping across questions for the M2 feedback, and wrote my own D3 version of the Q1 histogram. I used Claude (Opus 5.5) to make a reference D3 chart for Q1, the Q2 map (including the 2010 NTA boundary file and `download-nta-boundaries.py`) and the Q3 box plot, as stated in the AI Disclosure box on each page.
 
 ### Yiyang Zhang
 

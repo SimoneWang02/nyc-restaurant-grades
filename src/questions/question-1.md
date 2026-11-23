@@ -150,7 +150,7 @@ display(scoreHistogramBrush(scores, {width}));
 - Hover a bar to see its count and its share of all first inspections.
 
 <div class="warning" label="AI Disclosure">
-  I asked Claude to make this chart as a reference for mine. Claude wrote its code (the overview brush, the cutoff line and labels, the tooltip and the view buttons).
+  I asked Claude (Opus 5.5) to make this chart as a reference for mine. Claude wrote its code (the overview brush, the cutoff line and labels, the tooltip and the view buttons).
 </div>
 
 ```js

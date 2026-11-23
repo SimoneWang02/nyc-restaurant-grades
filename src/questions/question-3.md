@@ -80,7 +80,7 @@ display(cuisineBoxPlot(cuisines, {width, sortBy}));
 - The boxes describe the scores, not their cause (see "Reading the comparison" above).
 
 <div class="warning" label="AI Disclosure">
-  I asked Claude to make this chart. Claude wrote its code (the box plot, the count color scale and legend, the count and outlier columns, the A cutoff line, the sorting and the tooltip). Claude also added the restaurants, outliers and highest score columns and the summary file in the data processing.
+  I asked Claude (Opus 5.5) to make this chart. Claude wrote its code (the box plot, the count color scale and legend, the count and outlier columns, the A cutoff line, the sorting and the tooltip). Claude also added the restaurants, outliers and highest score columns and the summary file in the data processing.
 </div>
 
 ```js
